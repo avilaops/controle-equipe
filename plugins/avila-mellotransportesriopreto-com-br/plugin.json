@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "avila-mellotransportesriopreto-com-br",
+  "version": "0.2.0",
+  "description": "Site Mello Transportes",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Site Mello Transportes",
+        "shortDescription": "Desenvolvimento da aplicacao",
+        "developerName": "Avila Ops",
+        "capabilities": []
+      }
+    }
+  }
+}

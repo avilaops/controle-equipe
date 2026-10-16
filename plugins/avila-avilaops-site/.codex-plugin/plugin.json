@@ -1,0 +1,15 @@
+{
+  "name": "avila-avilaops-site",
+  "version": "0.2.0",
+  "description": "Site institucional Avila Ops",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Site institucional Avila Ops",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

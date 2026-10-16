@@ -1,0 +1,15 @@
+{
+  "name": "avila-saudepet-app-br",
+  "version": "0.2.0",
+  "description": "Aplicacao Saude Pet",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Aplicacao Saude Pet",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

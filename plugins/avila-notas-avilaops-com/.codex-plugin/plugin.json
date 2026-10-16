@@ -1,0 +1,15 @@
+{
+  "name": "avila-notas-avilaops-com",
+  "version": "0.2.0",
+  "description": "Notas e documentacao",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Notas e documentacao",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

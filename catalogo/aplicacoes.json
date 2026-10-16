@@ -1,0 +1,420 @@
+{
+  "workspace": "D:\\Projetos",
+  "scope": "Diretorios imediatos do workspace; subaplicacoes devem ser cadastradas com create.",
+  "records": [
+    {
+      "directory": "D:\\Projetos\\.claude",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\.codex",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\2026-10-14",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\arxisbim.com.br",
+      "category": "aplicacao",
+      "plugin": "avila-arxisbim-com-br",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\auth.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-auth-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\avilaops-site",
+      "category": "aplicacao",
+      "plugin": "avila-avilaops-site",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\central-integracoes",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": [
+        "README.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\chrome-devtools-mcp",
+      "category": "terceiro",
+      "plugin": null,
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\CMS",
+      "category": "aplicacao",
+      "plugin": "avila-cms",
+      "evidence": [
+        "README.md",
+        "Cargo.toml",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\crm.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-crm-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\DOMIRIO",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\engops.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-engops-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\ERP",
+      "category": "aplicacao",
+      "plugin": "avila-erp",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\extension-brave",
+      "category": "aplicacao",
+      "plugin": "avila-extension-brave",
+      "evidence": [
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\ferramentas",
+      "category": "aplicacao",
+      "plugin": "avila-ferramentas",
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\Gerador-3d",
+      "category": "aplicacao",
+      "plugin": "avila-gerador-3d",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\GRB",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\infra",
+      "category": "aplicacao",
+      "plugin": "avila-infra",
+      "evidence": [
+        "README.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\investigacao",
+      "category": "aplicacao",
+      "plugin": "avila-investigacao",
+      "evidence": [
+        "README.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\LLMS",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\lojas.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-lojas-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\Ludus Equipamentos",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\Ludusequipamentos-website",
+      "category": "aplicacao",
+      "plugin": "avila-ludusequipamentos-website",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mail.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-mail-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mcp-gsc",
+      "category": "terceiro",
+      "plugin": null,
+      "evidence": [
+        "README.md",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mcp-gsc-revalidate-20261015",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mcp-unificado",
+      "category": "aplicacao",
+      "plugin": "avila-mcp-unificado",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mcp.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-mcp-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\mellotransportesriopreto.com.br",
+      "category": "aplicacao",
+      "plugin": "avila-mellotransportesriopreto-com-br",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\motor-web",
+      "category": "aplicacao",
+      "plugin": "avila-motor-web",
+      "evidence": [
+        "README.md",
+        "Cargo.toml",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\n8n.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-n8n-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\node_modules",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\Notas",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\notas-integracao",
+      "category": "aplicacao",
+      "plugin": "avila-notas-integracao",
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\notas.avilaops.com",
+      "category": "aplicacao",
+      "plugin": "avila-notas-avilaops-com",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\Nova pasta",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\onetool-mcp-2.2.2",
+      "category": "terceiro",
+      "plugin": null,
+      "evidence": [
+        "README.md",
+        "AGENTS.md",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\outputs",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\painel-wifi",
+      "category": "aplicacao",
+      "plugin": "avila-painel-wifi",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\pentest",
+      "category": "aplicacao",
+      "plugin": "avila-pentest",
+      "evidence": [
+        "README.md",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\playwright-report",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\previews-arxisbim",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\saudepet.app.br",
+      "category": "aplicacao",
+      "plugin": "avila-saudepet-app-br",
+      "evidence": [
+        "package.json",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\Scrapper",
+      "category": "aplicacao",
+      "plugin": "avila-scrapper",
+      "evidence": [
+        "README.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\sharp-libvips-1.3.4",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\sinapsemed",
+      "category": "aplicacao",
+      "plugin": "avila-sinapsemed",
+      "evidence": [
+        "README.md",
+        "package.json"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\specs",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": [
+        "README.md"
+      ]
+    },
+    {
+      "directory": "D:\\Projetos\\tagflow",
+      "category": "aplicacao",
+      "plugin": "avila-tagflow",
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\test-results",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\tests",
+      "category": "artefato-ou-suporte",
+      "plugin": null,
+      "evidence": []
+    },
+    {
+      "directory": "D:\\Projetos\\TMS",
+      "category": "aplicacao",
+      "plugin": "avila-tms",
+      "evidence": [
+        "README.md",
+        "package.json",
+        "AGENTS.md"
+      ]
+    }
+  ]
+}

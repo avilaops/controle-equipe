@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "avila-lojas-avilaops-com",
+  "version": "0.2.0",
+  "description": "Plataforma de lojas virtuais",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Plataforma de lojas virtuais",
+        "shortDescription": "Desenvolvimento da aplicacao",
+        "developerName": "Avila Ops",
+        "capabilities": []
+      }
+    }
+  }
+}

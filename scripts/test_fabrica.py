@@ -1,0 +1,79 @@
+"""Regression tests for authoring boundaries and portable package validation."""
+
+import json
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+import fabrica
+
+
+class FactoryTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.source = self.root / "app"
+        self.source.mkdir()
+        (self.root / "schemas").mkdir()
+        shutil.copy(fabrica.ROOT / "schemas/plugin.schema.json", self.root / "schemas")
+        self.override = patch.object(fabrica, "ROOT", self.root)
+        self.override.start()
+        self.addCleanup(self.override.stop)
+
+    def create(self, name="avila-teste"):
+        return fabrica.create(name, self.source, "Aplicacao de teste")
+
+    def test_roundtrip_and_archive_root(self):
+        plugin = self.create()
+        fabrica.marketplace()
+        fabrica.validate(plugin)
+        fabrica.package()
+        archives = list((self.root / "dist").glob("*.zip"))
+        self.assertEqual(len(archives), 1)
+        with fabrica.zipfile.ZipFile(archives[0]) as archive:
+            self.assertIn("plugin.json", archive.namelist())
+            self.assertFalse(any(name.startswith("plugins/") for name in archive.namelist()))
+
+    def test_existing_package_preserved(self):
+        plugin = self.create()
+        before = (plugin / "plugin.json").read_bytes()
+        with self.assertRaises(FileExistsError):
+            self.create()
+        self.assertEqual(before, (plugin / "plugin.json").read_bytes())
+
+    def test_path_traversal_and_blank_description(self):
+        with self.assertRaises(ValueError):
+            self.create("../escape")
+        with self.assertRaises(ValueError):
+            fabrica.create("avila-empty", self.source, " ")
+        self.assertFalse((self.root / "plugins/avila-empty").exists())
+
+    def test_secret_file_blocks_packaging(self):
+        plugin = self.create()
+        (plugin / ".env").write_text("TEST_ONLY=1", encoding="utf-8")
+        with self.assertRaises(AssertionError):
+            fabrica.validate(plugin)
+
+    def test_missing_reference_and_overlay_drift(self):
+        plugin = self.create()
+        reference = next(plugin.glob("skills/*/references/aplicacao.md"))
+        reference.unlink()
+        with self.assertRaises(AssertionError):
+            fabrica.validate(plugin)
+        reference.write_text("Contexto", encoding="utf-8")
+        overlay_path = plugin / ".codex-plugin/plugin.json"
+        overlay = json.loads(overlay_path.read_text(encoding="utf-8"))
+        overlay["version"] = "9.0.0"
+        fabrica.dump(overlay_path, overlay)
+        with self.assertRaises(AssertionError):
+            fabrica.validate(plugin)
+
+    def test_maximum_plugin_name(self):
+        fabrica.validate(self.create("a" * 64))
+
+
+if __name__ == "__main__":
+    unittest.main()

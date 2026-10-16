@@ -1,0 +1,15 @@
+{
+  "name": "avila-auth-avilaops-com",
+  "version": "0.2.0",
+  "description": "Autenticacao compartilhada",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Autenticacao compartilhada",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "avila-mcp-unificado",
+  "version": "0.2.0",
+  "description": "Integracao MCP local",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Integracao MCP local",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

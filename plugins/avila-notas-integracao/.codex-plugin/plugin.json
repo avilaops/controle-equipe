@@ -1,0 +1,15 @@
+{
+  "name": "avila-notas-integracao",
+  "version": "0.2.0",
+  "description": "Sincronizacao de notas Obsidian e n8n",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sincronizacao de notas Obsidian e n8n",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

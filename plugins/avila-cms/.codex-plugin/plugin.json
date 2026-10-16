@@ -1,0 +1,15 @@
+{
+  "name": "avila-cms",
+  "version": "0.2.0",
+  "description": "Plataforma de sites CMS",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Plataforma de sites CMS",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

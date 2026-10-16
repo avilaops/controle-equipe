@@ -1,0 +1,15 @@
+{
+  "name": "avila-sinapsemed",
+  "version": "0.2.0",
+  "description": "Plataforma de estudo SinapseMed",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Plataforma de estudo SinapseMed",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

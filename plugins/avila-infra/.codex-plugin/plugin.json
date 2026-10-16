@@ -1,0 +1,15 @@
+{
+  "name": "avila-infra",
+  "version": "0.2.0",
+  "description": "Infraestrutura compartilhada",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Infraestrutura compartilhada",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

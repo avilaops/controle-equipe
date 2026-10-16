@@ -1,0 +1,121 @@
+{
+  "validation": "Estrutural local; nao comprova instalacao ou conexao.",
+  "results": [
+    {
+      "plugin": "avila-arxisbim-com-br",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-auth-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-avilaops-site",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-cms",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-crm-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-engops-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-erp",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-extension-brave",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-ferramentas",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-gerador-3d",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-infra",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-investigacao",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-lojas-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-ludusequipamentos-website",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-mail-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-mcp-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-mcp-unificado",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-mellotransportesriopreto-com-br",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-motor-web",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-n8n-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-notas-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-notas-integracao",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-painel-wifi",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-pentest",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-saudepet-app-br",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-scrapper",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-sinapsemed",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-tagflow",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-tms",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "avila-lojas-avilaops-com",
+  "version": "0.2.0",
+  "description": "Plataforma de lojas virtuais",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Plataforma de lojas virtuais",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

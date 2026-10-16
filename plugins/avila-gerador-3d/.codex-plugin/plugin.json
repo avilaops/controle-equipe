@@ -1,0 +1,15 @@
+{
+  "name": "avila-gerador-3d",
+  "version": "0.2.0",
+  "description": "Gerador parametrico 3D",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gerador parametrico 3D",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

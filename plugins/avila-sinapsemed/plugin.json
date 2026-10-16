@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "avila-sinapsemed",
+  "version": "0.2.0",
+  "description": "Plataforma de estudo SinapseMed",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Plataforma de estudo SinapseMed",
+        "shortDescription": "Desenvolvimento da aplicacao",
+        "developerName": "Avila Ops",
+        "capabilities": []
+      }
+    }
+  }
+}

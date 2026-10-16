@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "avila-gerador-3d",
+  "version": "0.2.0",
+  "description": "Gerador parametrico 3D",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Gerador parametrico 3D",
+        "shortDescription": "Desenvolvimento da aplicacao",
+        "developerName": "Avila Ops",
+        "capabilities": []
+      }
+    }
+  }
+}

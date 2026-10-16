@@ -1,0 +1,15 @@
+{
+  "name": "avila-crm-avilaops-com",
+  "version": "0.2.0",
+  "description": "CRM e atendimento omnichannel",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CRM e atendimento omnichannel",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "avila-notas-avilaops-com",
+  "version": "0.2.0",
+  "description": "Notas e documentacao",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Notas e documentacao",
+        "shortDescription": "Desenvolvimento da aplicacao",
+        "developerName": "Avila Ops",
+        "capabilities": []
+      }
+    }
+  }
+}

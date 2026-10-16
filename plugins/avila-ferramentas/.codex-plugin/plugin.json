@@ -1,0 +1,15 @@
+{
+  "name": "avila-ferramentas",
+  "version": "0.2.0",
+  "description": "Ferramentas locais do workspace",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ferramentas locais do workspace",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

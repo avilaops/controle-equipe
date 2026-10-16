@@ -1,0 +1,266 @@
+{
+  "generatedAt": "2026-10-15T21:42:43+00:00",
+  "applications": [
+    {
+      "application": "avila-arxisbim-com-br",
+      "path": "D:\\Projetos\\arxisbim.com.br\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-auth-avilaops-com",
+      "path": "D:\\Projetos\\auth.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-avilaops-site",
+      "path": "D:\\Projetos\\avilaops-site\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-cms",
+      "path": "D:\\Projetos\\CMS\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-crm-avilaops-com",
+      "path": "D:\\Projetos\\crm.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-engops-avilaops-com",
+      "path": "D:\\Projetos\\engops.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-erp",
+      "path": "D:\\Projetos\\ERP\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-extension-brave",
+      "path": "D:\\Projetos\\extension-brave\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-ferramentas",
+      "path": "D:\\Projetos\\ferramentas\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-gerador-3d",
+      "path": "D:\\Projetos\\Gerador-3d\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-infra",
+      "path": "D:\\Projetos\\infra\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-investigacao",
+      "path": "D:\\Projetos\\investigacao\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-lojas-avilaops-com",
+      "path": "D:\\Projetos\\lojas.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-ludusequipamentos-website",
+      "path": "D:\\Projetos\\Ludusequipamentos-website\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-mail-avilaops-com",
+      "path": "D:\\Projetos\\mail.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-mcp-unificado",
+      "path": "D:\\Projetos\\mcp-unificado\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-mcp-avilaops-com",
+      "path": "D:\\Projetos\\mcp.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-mellotransportesriopreto-com-br",
+      "path": "D:\\Projetos\\mellotransportesriopreto.com.br\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-motor-web",
+      "path": "D:\\Projetos\\motor-web\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-n8n-avilaops-com",
+      "path": "D:\\Projetos\\n8n.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-notas-integracao",
+      "path": "D:\\Projetos\\notas-integracao\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-notas-avilaops-com",
+      "path": "D:\\Projetos\\notas.avilaops.com\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-painel-wifi",
+      "path": "D:\\Projetos\\painel-wifi\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-pentest",
+      "path": "D:\\Projetos\\pentest\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-saudepet-app-br",
+      "path": "D:\\Projetos\\saudepet.app.br\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-scrapper",
+      "path": "D:\\Projetos\\Scrapper\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-sinapsemed",
+      "path": "D:\\Projetos\\sinapsemed\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-tagflow",
+      "path": "D:\\Projetos\\tagflow\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    },
+    {
+      "application": "avila-tms",
+      "path": "D:\\Projetos\\TMS\\.agents\\equipe\\controle.json",
+      "members": 0,
+      "tasks": 0,
+      "blocked": 0,
+      "completed": 0,
+      "registration": "sem membros cadastrados"
+    }
+  ]
+}

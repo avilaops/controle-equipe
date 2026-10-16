@@ -1,0 +1,15 @@
+{
+  "name": "avila-tms",
+  "version": "0.2.0",
+  "description": "Sistema de gestao de transportes",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sistema de gestao de transportes",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

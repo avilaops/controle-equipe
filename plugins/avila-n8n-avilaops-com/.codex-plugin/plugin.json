@@ -1,0 +1,15 @@
+{
+  "name": "avila-n8n-avilaops-com",
+  "version": "0.2.0",
+  "description": "Modulos e automacoes n8n",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Modulos e automacoes n8n",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

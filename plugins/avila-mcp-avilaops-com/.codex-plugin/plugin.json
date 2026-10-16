@@ -1,0 +1,15 @@
+{
+  "name": "avila-mcp-avilaops-com",
+  "version": "0.2.0",
+  "description": "Gateway MCP Avila Ops",
+  "author": {
+    "name": "Avila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gateway MCP Avila Ops",
+    "shortDescription": "Desenvolvimento da aplicacao",
+    "developerName": "Avila Ops",
+    "capabilities": []
+  }
+}

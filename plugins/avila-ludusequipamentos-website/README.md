@@ -1,0 +1,7 @@
+# Site Ludus Equipamentos
+
+Plugin `avila-ludusequipamentos-website` com uma skill de desenvolvimento local.
+
+Para criar workflows de negocio, adicione skills focadas em `skills/<nome>/SKILL.md`, com entradas, passos, saida e verificacao especificos. Siga `docs/AUTORIA.md` na fabrica.
+
+Nao instalado nem conectado automaticamente. Este pacote nao concede acesso ao sistema.

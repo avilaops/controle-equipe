@@ -1,0 +1,405 @@
+[
+  {
+    "application": "avila-avilaops-site",
+    "status": "central-only",
+    "reason": "Repositorio remoto indisponivel",
+    "remote": "https://github.com/avilaops/avilaops-site",
+    "centralPath": "projetos-locais/avila-avilaops-site"
+  },
+  {
+    "application": "avila-auth-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/auth.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "bc0485cf2c24a8dea067e2c4961b365f05961a51",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-auth-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/auth.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-arxisbim-com-br",
+    "status": "pushed",
+    "repository": "avilaops/arxisbim.com.br",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "9ac13e871dd583736be833a3305173fbb75f0c41",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-arxisbim-com-br-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/arxisbim.com.br/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-cms",
+    "status": "pushed",
+    "repository": "avilaops/cms.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "41051e91208ee563712d1aa3fc106896dd6a7d9f",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-cms-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/cms.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-engops-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/engops.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "0dba3a76351ac554d4fae48568a413a41fce31fe",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-engops-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/engops.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-crm-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/crm.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "c3af2f5d44fe56a82ec66efb6d73c1abdea8a89f",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-crm-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/crm.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-erp",
+    "status": "pushed",
+    "repository": "avilaops/ERP",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "7f8c75ba492afba2d4fdf811758a0d5e76397a75",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-erp-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/ERP/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-extension-brave",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-extension-brave"
+  },
+  {
+    "application": "avila-ferramentas",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-ferramentas"
+  },
+  {
+    "application": "avila-gerador-3d",
+    "status": "pushed",
+    "repository": "avilaops/gerador-3d",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "60319e79b4ee8ab2327f4411829da4363bfa9727",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-gerador-3d-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/gerador-3d/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-infra",
+    "status": "pushed",
+    "repository": "avilaops/infra",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "ec7c4b3bf22fbea97b1d485e2907854044564ce8",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-infra-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/infra/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-investigacao",
+    "status": "pushed",
+    "repository": "avilaops/investigacao",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "228832de367fe0a162ba92384f89920158fb891b",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-investigacao-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/investigacao/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-lojas-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/lojas.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "d27174e74a878a4267e3967367037069115d05a1",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-lojas-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/lojas.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-mcp-unificado",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-mcp-unificado"
+  },
+  {
+    "application": "avila-mail-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/mail.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "e4f15b00cd0017896af078e8df635715abab404d",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-mail-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/mail.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-ludusequipamentos-website",
+    "status": "pushed",
+    "repository": "avilaops/ludusequipamentos-website",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "7d88d523146ae71da2831b4b58c818abb2ddd503",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-ludusequipamentos-website-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/ludusequipamentos-website/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-mellotransportesriopreto-com-br",
+    "status": "pushed",
+    "repository": "avilaops/mellotransportesriopreto.com.br",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "adab8d6c136e3217c73e01b549578023de9820ab",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-mellotransportesriopreto-com-br-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/mellotransportesriopreto.com.br/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-motor-web",
+    "status": "pushed",
+    "repository": "avilaops/motor-web",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "98aae953ebea1baef7a5a2e8b6a56111fec58c5a",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-motor-web-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/motor-web/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-notas-integracao",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-notas-integracao"
+  },
+  {
+    "application": "avila-mcp-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/mcp.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "4c013613a289efe565fdaa0e0518ad9c6be0fbad",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-mcp-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/mcp.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-painel-wifi",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-painel-wifi"
+  },
+  {
+    "application": "avila-n8n-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/n8n.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "3cb0e282138932593e6ee2dc548e88ae14e276bd",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-n8n-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/n8n.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-notas-avilaops-com",
+    "status": "pushed",
+    "repository": "avilaops/notas.avilaops.com",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "bdac7c499d905858b75fb6e0b7217a7a25448816",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-notas-avilaops-com-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/notas.avilaops.com/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-pentest",
+    "status": "pushed",
+    "repository": "avilaops/pentest",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "03d0d9499303978a49654ac6878c4a861d90f4ce",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-pentest-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/pentest/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-saudepet-app-br",
+    "status": "pushed",
+    "repository": "avilaops/saudepet.app.br",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "7f305740e2116a8727a9d11f8e1aaddaf32d3033",
+    "files": [],
+    "url": "https://github.com/avilaops/saudepet.app.br/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-tagflow",
+    "status": "central-only",
+    "reason": "Sem remoto Git configurado",
+    "centralPath": "projetos-locais/avila-tagflow"
+  },
+  {
+    "application": "avila-scrapper",
+    "status": "pushed",
+    "repository": "avilaops/catalogos-fornecedores",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "cc4a54f3a5f907d6c3618da5e20394dd97f5e354",
+    "files": [],
+    "url": "https://github.com/avilaops/catalogos-fornecedores/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-sinapsemed",
+    "status": "pushed",
+    "repository": "avilainc/sinapsemed",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "34aa9cc329f34c2445f2838a310556ac9f087462",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-sinapsemed-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilainc/sinapsemed/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  },
+  {
+    "application": "avila-tms",
+    "status": "pushed",
+    "repository": "avilaops/TMS",
+    "branch": "feat/controle-equipe-20261016",
+    "commit": "366c440164a42a5f187fe7ac9e199bb60a85a0ce",
+    "files": [
+      ".agents/equipe/CONTEXTO.md",
+      ".agents/equipe/MODELO-DE-DEMANDA.md",
+      ".agents/equipe/README.md",
+      ".agents/equipe/controle.json",
+      ".agents/skills/avila-tms-equipe/SKILL.md",
+      "AGENTS.md"
+    ],
+    "url": "https://github.com/avilaops/TMS/tree/feat/controle-equipe-20261016",
+    "sourceIndexPreserved": true
+  }
+]

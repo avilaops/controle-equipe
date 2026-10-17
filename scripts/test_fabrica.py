@@ -92,6 +92,17 @@ class FactoryTests(unittest.TestCase):
                 fabrica.hashlib.sha256((plugin / member).read_bytes()).hexdigest(),
             )
 
+    def test_markdown_links_must_resolve(self):
+        docs = self.root / "docs"
+        docs.mkdir()
+        guide = docs / "guide.md"
+        guide.write_text("[válido](../README.md) [modelo]({skill-folder}/SKILL.md)", encoding="utf-8")
+        (self.root / "README.md").write_text("# Marketplace\n", encoding="utf-8")
+        fabrica.validate_markdown_links(self.root)
+        guide.write_text("[quebrado](ausente.md)", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            fabrica.validate_markdown_links(self.root)
+
 
 if __name__ == "__main__":
     unittest.main()

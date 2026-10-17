@@ -1,7 +1,8 @@
-# Distribuição privada
+# Distribuição
 
-Este repositório é o marketplace compartilhado da equipe. Os pacotes permanecem privados;
-somente membros autorizados da organização conseguem cloná-los ou adicioná-los pelo GitHub.
+Este repositório público é a fonte oficial do marketplace compartilhado da equipe. A leitura do
+catálogo não concede acesso aos serviços conectados; cada MCP, API ou aplicativo exige suas
+próprias credenciais e permissões.
 
 ## Codex e ChatGPT desktop
 
@@ -21,7 +22,12 @@ suportado pela versão do Claude usada pela equipe. Não copie arquivos para o c
 ## Releases
 
 Tags `v*` executam testes, empacotam todos os plugins e publicam os ZIPs e `sha256.json` numa
-release privada. Para rollback, reinstale a versão anterior ou fixe a referência do marketplace.
+release do repositório. Para rollback, reinstale a versão anterior ou fixe a referência do marketplace.
+
+## Fonte única
+
+O antigo repositório `avilaops/plugins` foi descontinuado. Autoria, revisão, validação,
+empacotamento e publicação acontecem somente em `avilaops/controle-equipe`.
 
 ## Servidor
 

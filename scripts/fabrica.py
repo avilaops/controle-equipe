@@ -282,6 +282,22 @@ def validate(path: Path) -> None:
             ET.parse(file)
 
 
+def validate_markdown_links(root: Path) -> None:
+    """Require every local Markdown link in the repository to resolve."""
+    for document in sorted(root.rglob("*.md")):
+        if any(part in EXCLUDED or part == "dist" for part in document.relative_to(root).parts):
+            continue
+        content = document.read_text(encoding="utf-8-sig")
+        for reference in re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", content):
+            target = unquote(reference.split("#", 1)[0].strip())
+            if (not target or "://" in target or target.startswith(("mailto:", "#"))
+                    or any(char in target for char in "{}<>")):
+                continue
+            resolved = (document.parent / target).resolve()
+            require(resolved.is_relative_to(root.resolve()) and resolved.exists(),
+                    f"Referencia Markdown invalida em {document.relative_to(root)}: {reference}")
+
+
 def check_all() -> list[dict]:
     results = []
     for path in sorted((ROOT / "plugins").iterdir()):
@@ -296,6 +312,7 @@ def check_all() -> list[dict]:
     for entry in market["plugins"]:
         target = (ROOT / entry["source"]["path"]).resolve()
         require(target.is_relative_to(ROOT) and (target / "plugin.json").is_file(), "Origem invalida no marketplace")
+    validate_markdown_links(ROOT)
     dump(ROOT / "reports/validacao.json", {"validation": "Estrutural local; nao comprova instalacao ou conexao.", "results": results})
     if not results or any(r["status"] == "failed" for r in results):
         raise ValueError("Validacao falhou; consulte reports/validacao.json")
@@ -307,7 +324,7 @@ def catalogue(results: list[dict]) -> None:
     (ROOT / "docs").mkdir(parents=True, exist_ok=True)
     lines = [
         "# Catálogo compartilhado Ávila Ops", "",
-        "Plugins disponíveis no marketplace privado `avilaops-desenvolvimento`.", "",
+        "Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.", "",
         "| Plugin | Versão | Skills | MCP | Finalidade | Validação |",
         "| --- | --- | ---: | --- | --- | --- |",
     ]

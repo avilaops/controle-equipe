@@ -17,6 +17,8 @@ def load(path: Path) -> dict:
 
 
 def dump(path: Path, value: object) -> None:
+    if path.is_file() and load(path) == value:
+        return
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
@@ -65,7 +67,7 @@ def gallery(plugins: list[Path]) -> None:
             f'<strong>{html.escape(display)}</strong><small>{plugin.name}</small></a>'
         )
     document = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plugins Ávila Ops</title><style>
-body{{margin:0;background:#071421;color:#f8fafc;font:16px system-ui,sans-serif}}main{{max-width:1180px;margin:auto;padding:48px 24px}}h1{{font-size:clamp(32px,5vw,58px);margin:0 0 12px}}p{{color:#a9bdd0;margin:0 0 36px}}.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}}.card{{background:#10243a;border:1px solid #25425e;border-radius:20px;padding:22px;color:inherit;text-decoration:none;display:grid;gap:10px;transition:.15s}}.card:hover{{transform:translateY(-3px);border-color:#38bdf8}}img{{width:82px;height:82px}}strong{{font-size:17px}}small{{color:#8fa9bf;overflow-wrap:anywhere}}</style></head><body><main><h1>Marketplace Ávila Ops</h1><p>{len(plugins)} plugins privados para desenvolvimento e operações.</p><section class="grid">{''.join(cards)}</section></main></body></html>'''
+body{{margin:0;background:#071421;color:#f8fafc;font:16px system-ui,sans-serif}}main{{max-width:1180px;margin:auto;padding:48px 24px}}h1{{font-size:clamp(32px,5vw,58px);margin:0 0 12px}}p{{color:#a9bdd0;margin:0 0 36px}}.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}}.card{{background:#10243a;border:1px solid #25425e;border-radius:20px;padding:22px;color:inherit;text-decoration:none;display:grid;gap:10px;transition:.15s}}.card:hover{{transform:translateY(-3px);border-color:#38bdf8}}img{{width:82px;height:82px}}strong{{font-size:17px}}small{{color:#8fa9bf;overflow-wrap:anywhere}}</style></head><body><main><h1>Marketplace Ávila Ops</h1><p>{len(plugins)} plugins oficiais para desenvolvimento e operações.</p><section class="grid">{''.join(cards)}</section></main></body></html>'''
     (ROOT / "docs/GALERIA.html").write_text(document, encoding="utf-8")
 
 

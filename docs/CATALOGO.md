@@ -1,6 +1,6 @@
 # Catálogo compartilhado Ávila Ops
 
-Plugins disponíveis no marketplace privado `avilaops-desenvolvimento`.
+Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.
 
 | Plugin | Versão | Skills | MCP | Finalidade | Validação |
 | --- | --- | ---: | --- | --- | --- |

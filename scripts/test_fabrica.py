@@ -54,25 +54,43 @@ class FactoryTests(unittest.TestCase):
     def test_secret_file_blocks_packaging(self):
         plugin = self.create()
         (plugin / ".env").write_text("TEST_ONLY=1", encoding="utf-8")
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             fabrica.validate(plugin)
 
     def test_missing_reference_and_overlay_drift(self):
         plugin = self.create()
         reference = next(plugin.glob("skills/*/references/aplicacao.md"))
         reference.unlink()
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             fabrica.validate(plugin)
         reference.write_text("Contexto", encoding="utf-8")
         overlay_path = plugin / ".codex-plugin/plugin.json"
         overlay = json.loads(overlay_path.read_text(encoding="utf-8"))
         overlay["version"] = "9.0.0"
         fabrica.dump(overlay_path, overlay)
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             fabrica.validate(plugin)
 
     def test_maximum_plugin_name(self):
         fabrica.validate(self.create("a" * 64))
+
+    def test_validation_remains_active_under_optimized_python(self):
+        plugin = self.create()
+        (plugin / ".env").write_text("SECRET=test", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            fabrica.validate(plugin)
+
+    def test_archive_matches_validated_source(self):
+        plugin = self.create()
+        fabrica.marketplace()
+        fabrica.package()
+        archive = next((self.root / "dist").glob("*.zip"))
+        with fabrica.zipfile.ZipFile(archive) as bundle:
+            member = "plugin.json"
+            self.assertEqual(
+                fabrica.hashlib.sha256(bundle.read(member)).hexdigest(),
+                fabrica.hashlib.sha256((plugin / member).read_bytes()).hexdigest(),
+            )
 
 
 if __name__ == "__main__":

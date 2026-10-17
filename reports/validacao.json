@@ -2,6 +2,10 @@
   "validation": "Estrutural local; nao comprova instalacao ou conexao.",
   "results": [
     {
+      "plugin": "apple-avila",
+      "status": "passed"
+    },
+    {
       "plugin": "avila-arxisbim-com-br",
       "status": "passed"
     },
@@ -18,7 +22,19 @@
       "status": "passed"
     },
     {
+      "plugin": "avila-cms-operacoes",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-crm",
+      "status": "passed"
+    },
+    {
       "plugin": "avila-crm-avilaops-com",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-design",
       "status": "passed"
     },
     {
@@ -50,11 +66,19 @@
       "status": "passed"
     },
     {
+      "plugin": "avila-lojas",
+      "status": "passed"
+    },
+    {
       "plugin": "avila-lojas-avilaops-com",
       "status": "passed"
     },
     {
       "plugin": "avila-ludusequipamentos-website",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-mail",
       "status": "passed"
     },
     {
@@ -82,11 +106,19 @@
       "status": "passed"
     },
     {
+      "plugin": "avila-notas",
+      "status": "passed"
+    },
+    {
       "plugin": "avila-notas-avilaops-com",
       "status": "passed"
     },
     {
       "plugin": "avila-notas-integracao",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-ops-skills",
       "status": "passed"
     },
     {
@@ -110,11 +142,31 @@
       "status": "passed"
     },
     {
+      "plugin": "avila-skills",
+      "status": "passed"
+    },
+    {
       "plugin": "avila-tagflow",
       "status": "passed"
     },
     {
       "plugin": "avila-tms",
+      "status": "passed"
+    },
+    {
+      "plugin": "avila-tms-operacoes",
+      "status": "passed"
+    },
+    {
+      "plugin": "dev-6ad0a0086b188191928c20e0cf70d6fe",
+      "status": "passed"
+    },
+    {
+      "plugin": "lojas-clientes",
+      "status": "passed"
+    },
+    {
+      "plugin": "n8n-avilaops",
       "status": "passed"
     }
   ]

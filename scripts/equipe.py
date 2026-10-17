@@ -141,19 +141,36 @@ def mutate(args):
 
 
 def panel():
+    publication = json.loads((ROOT / "reports/publicacao-git.json").read_text(encoding="utf-8"))
+    destinations = {row["application"]: row.get("url") or row.get("centralPath") for row in publication}
+    snapshot_path = ROOT / "reports/equipes.json"
+    snapshot = json.loads(snapshot_path.read_text(encoding="utf-8")) if snapshot_path.is_file() else {"applications": []}
+    previous = {row["application"]: row for row in snapshot.get("applications", [])}
     rows = []
     lines = ["# Controle da equipe por aplicacao", "", f"Gerado em {now()}.", "",
              "Retrato dos registros locais. Nao comprova deploy, sincronizacao Git ou atividade em tempo real.", "",
              "| Aplicacao | Membros | Tarefas | Bloqueadas | Concluidas |", "| --- | ---: | ---: | ---: | ---: |"]
     for app in applications():
-        path, data = read(app)
-        row = {"application": app, "path": str(path), "members": len(data["members"]),
+        try:
+            _, data = read(app)
+        except (FileNotFoundError, ValueError):
+            prior = previous.get(app)
+            if prior is None:
+                raise
+            data = {
+                "members": [None] * prior["members"],
+                "tasks": ([{"status": "bloqueada"}] * prior["blocked"]
+                          + [{"status": "concluida"}] * prior["completed"]
+                          + [{"status": "a-fazer"}] * (prior["tasks"] - prior["blocked"] - prior["completed"])),
+            }
+        destination = destinations.get(app, "")
+        row = {"application": app, "source": destination, "members": len(data["members"]),
                "tasks": len(data["tasks"]), "blocked": sum(t["status"] == "bloqueada" for t in data["tasks"]),
                "completed": sum(t["status"] == "concluida" for t in data["tasks"]),
                "registration": "sem membros cadastrados" if not data["members"] else "equipe cadastrada"}
         rows.append(row)
-        link = path.relative_to(ROOT.parents[1]).as_posix() if path.is_relative_to(ROOT.parents[1]) else str(path)
-        lines.append(f"| [{app}](../../{link}) | {row['members']} | {row['tasks']} | {row['blocked']} | {row['completed']} |")
+        label = f"[{app}]({destination})" if destination else app
+        lines.append(f"| {label} | {row['members']} | {row['tasks']} | {row['blocked']} | {row['completed']} |")
     fabrica.dump(ROOT / "reports/equipes.json", {"generatedAt": now(), "applications": rows})
     (ROOT / "PAINEL-EQUIPE.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"{len(rows)} registros de equipe validados")

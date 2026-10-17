@@ -1,91 +1,61 @@
-# Fabrica de plugins e skills Avila Ops
+# Marketplace privado Ávila Ops
 
-Os destinos e commits desta entrega estao em [Publicacao Git](PUBLICACAO-GIT.md).
-O repositorio central e privado. `projetos-locais/` preserva somente a estrutura
-de equipe dos projetos que nao tinham remoto Git acessivel na publicacao.
+Fonte compartilhada de plugins, skills e controle de equipe da Ávila Ops.
 
-## Controle da equipe nos repositorios
+- 29 plugins de desenvolvimento ligados às aplicações.
+- 12 plugins operacionais e de produto.
+- 1 plugin `avila-skills` com 20 workflows especializados.
+- Marketplace privado para instalação por membros autorizados.
 
-Cada uma das 29 aplicacoes tem agora `.agents/equipe/` com contexto, registro de
-pessoas, tarefas, decisoes e integracoes, alem de uma skill local em `.agents/skills/`.
-O AGENTS.md de cada raiz aponta para essa estrutura. As regras anteriores foram preservadas.
-
-Consulte o [painel consolidado](PAINEL-EQUIPE.md). Os registros iniciais estao vazios:
-nao foram informados nomes, atribuicoes ou demandas reais para cadastrar.
-
-```powershell
-python scripts/equipe.py --help
-python scripts/equipe.py painel
-python scripts/equipe.py exportar
-python scripts/fabrica.py package
-```
-
-Os repositorios sao a origem das skills de equipe. `exportar` atualiza apenas as
-skills correspondentes nos pacotes centrais. Atualize o painel para refletir alteracoes
-nos registros. O controle e local e versionavel; nao e um servico de acompanhamento em tempo real.
-
-Base de autoria local para as aplicacoes encontradas em `D:\Projetos`.
-O acervo anterior da central e os repositorios originais permanecem preservados.
+Consulte o [catálogo](docs/CATALOGO.md), a [galeria](docs/GALERIA.html), a [distribuição](docs/DISTRIBUICAO.md),
+a [autoria](docs/AUTORIA.md), as [integrações](docs/CONEXOES.md) e o
+[controle da equipe](PAINEL-EQUIPE.md).
 
 ## Estrutura
 
 ```text
-desenvolvimento/
-  .agents/plugins/marketplace.json  Catalogo para distribuicao local
-  catalogo/aplicacoes.json         Aplicacoes, evidencias e classificacoes
-  plugins/<nome>/                  Fonte editavel de cada plugin
-    plugin.json                   Manifesto portavel Agent Plugins 1.0
-    .codex-plugin/plugin.json      Manifesto de compatibilidade Codex
-    skills/<nome>/SKILL.md         Workflow e criterio de uso
-    skills/<nome>/references/      Contexto especifico da aplicacao
-  scripts/fabrica.py               Gerador, validador e empacotador
-  docs/                           Autoria, conexoes e verificacao
-  reports/validacao.json           Evidencia de validacao estrutural
-  dist/                           Um ZIP por plugin e hashes SHA-256
+.agents/plugins/marketplace.json  Catálogo consumido pelos clientes
+plugins/                          Fontes editáveis dos plugins
+scripts/fabrica.py                Validação e empacotamento
+scripts/equipe.py                 Controle versionado da equipe
+schemas/                          Schemas portáteis utilizados
+docs/                             Catálogo e procedimentos
+dist/                             Artefatos gerados, fora do Git
 ```
 
-## Usar
-
-No PowerShell, a partir desta pasta:
+## Verificar
 
 ```powershell
-python -m pip install -r requirements.txt
-python scripts/fabrica.py inventory D:\Projetos
-python scripts/fabrica.py validate
-python scripts/fabrica.py package
-python -m unittest discover -s scripts -p test_fabrica.py -v
+py -3 -m pip install -r requirements.txt
+py -3 -m unittest discover -s scripts -p "test_*.py" -v
+py -3 scripts/fabrica.py validate
+py -3 scripts/fabrica.py package
 ```
 
-O inventario preserva pacotes existentes. Ele cobre as pastas imediatas do workspace,
-classifica terceiros e artefatos e registra pastas ainda sem classificacao.
-Nao representa inventario recursivo de produtos internos nem de sistemas apenas remotos.
+O empacotamento compara cada arquivo do ZIP com a fonte validada, extrai o pacote em ambiente
+temporário e repete a descoberta estrutural. Isso não substitui autenticação nem execução
+funcional dentro do host.
 
-Para uma nova aplicacao ou subaplicacao:
+## Instalar pela equipe
 
 ```powershell
-python scripts/fabrica.py create avila-nova-aplicacao --source D:\Projetos\MinhaAplicacao --description 'Minha aplicacao'
-python scripts/fabrica.py validate
-python scripts/fabrica.py package
+codex plugin marketplace add avilaops/controle-equipe --ref main
+codex plugin marketplace list
 ```
 
-O gerador recusa sobrescrever pacotes existentes. Registre novas aplicacoes recorrentes
-no mapa `APPLICATIONS` para integra-las ao inventario. Skills existentes em outros
-locais nao sao importadas automaticamente: revise escopo, dependencias e licenca antes.
+Depois, instale os plugins necessários pelo navegador de plugins e inicie uma conversa nova.
+O repositório é privado; o usuário precisa ter acesso à organização.
 
-## Disponibilidade
+## Identidades semelhantes
 
-Os pacotes iniciais oferecem desenvolvimento local orientado ao checkout de cada aplicacao.
-Ainda nao fornecem ferramentas de negocio, acesso remoto ou operacoes de producao.
-O catalogo nao instala nem ativa plugins. Para registrar a fonte local, com uma versao
-do Codex que ofereca esse comando:
+`avila-cms` e `avila-tms` orientam desenvolvimento nos respectivos checkouts.
+`avila-cms-operacoes` e `avila-tms-operacoes` fornecem workflows operacionais ligados ao MCP.
+Essa separação evita que uma instalação substitua silenciosamente a outra.
 
-```powershell
-codex plugin marketplace add D:\Projetos\central-integracoes\desenvolvimento
-```
+## Limites
 
-Depois instale o plugin escolhido no diretorio de plugins e verifique-o em uma nova conversa.
-Para web e mobile, um checkout local nao fica acessivel por instalar o pacote; workflows
-remotos exigem uma conexao suportada e testada. Consulte [Autoria](docs/AUTORIA.md)
-e [Conexoes](docs/CONEXOES.md).
+Os plugins não carregam credenciais nem concedem acesso automaticamente. MCPs e APIs precisam
+estar disponíveis, autenticados e autorizados para a identidade e empresa corretas. Evidência
+estrutural, instalação, conexão e resultado de negócio são estados diferentes.
 
-Formato conferido em 15/10/2026 com a [documentacao oficial de pacotes](https://developers.openai.com/plugins/build/plugins).
+Formato baseado na [documentação oficial de plugins OpenAI](https://developers.openai.com/plugins/build/plugins).

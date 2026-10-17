@@ -3,11 +3,15 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import json
 import re
+import tempfile
 import unicodedata
+from urllib.parse import unquote, urlsplit
 import zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import yaml
@@ -15,6 +19,7 @@ import jsonschema
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = "https://agent-plugins.org/schemas/1.0.0/"
+EXCLUDED = {"__pycache__", "node_modules", ".git", ".venv", "venv"}
 APPLICATIONS = {
     "arxisbim.com.br": "Plataforma BIM Arxis",
     "auth.avilaops.com": "Autenticacao compartilhada",
@@ -70,6 +75,32 @@ def valid_name(value: str) -> str:
     if len(value) > 64 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", value):
         raise ValueError("Use um nome kebab-case com ate 64 caracteres.")
     return value
+
+
+def require(condition: object, message: str) -> None:
+    if not condition:
+        raise ValueError(message)
+
+
+def contained(root: Path, target: str) -> Path:
+    require(isinstance(target, str) and target.startswith("./"), "Caminho do pacote deve iniciar com ./")
+    path = (root / target).resolve()
+    require(path.is_relative_to(root.resolve()) and ".." not in Path(target).parts, "Caminho escapa do pacote")
+    require(path.exists(), "Recurso referenciado ausente")
+    return path
+
+
+def package_files(root: Path) -> list[Path]:
+    files = []
+    for path in sorted(root.rglob("*")):
+        require(not path.is_symlink(), "Link simbolico nao permitido")
+        if any(part in EXCLUDED for part in path.relative_to(root).parts):
+            continue
+        if path.is_file():
+            require(path.name != ".env" and not (path.name.startswith(".env.") and not path.name.endswith(".example")), "Arquivo de ambiente privado")
+            require(path.suffix.lower() not in {".pem", ".key", ".pfx", ".p12"}, "Credencial ou certificado no pacote")
+            files.append(path)
+    return files
 
 
 def create(name: str, source: Path, description: str) -> Path:
@@ -148,10 +179,11 @@ def marketplace() -> None:
     entries = []
     for path in sorted((ROOT / "plugins").glob("*/plugin.json")):
         manifest = json.loads(path.read_text(encoding="utf-8"))
+        category = manifest.get("extensions", {}).get("com.openai", {}).get("interface", {}).get("category", "Productivity")
         entries.append({"name": manifest["name"], "source": {
             "source": "local", "path": "./" + path.parent.relative_to(ROOT).as_posix(),
         }, "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
-            "category": "Productivity"})
+            "category": category})
     dump(ROOT / ".agents/plugins/marketplace.json", {
         "name": "avilaops-desenvolvimento", "interface": {"displayName": "Avila Ops - Desenvolvimento"},
         "plugins": entries,
@@ -179,56 +211,75 @@ def inventory(workspace: Path) -> None:
 
 
 def validate(path: Path) -> None:
-    if path.is_symlink() or any(p.is_symlink() for p in path.rglob("*")):
-        raise ValueError("Links simbolicos nao sao permitidos no pacote.")
+    files = package_files(path)
     manifest = json.loads((path / "plugin.json").read_text(encoding="utf-8"))
     schema = json.loads((ROOT / "schemas/plugin.schema.json").read_text(encoding="utf-8"))
     jsonschema.Draft202012Validator(schema).validate(manifest)
-    assert manifest["$schema"] == SCHEMA + "plugin.schema.json", "Schema incorreto"
+    require(manifest["$schema"] == SCHEMA + "plugin.schema.json", "Schema incorreto")
     valid_name(manifest["name"])
-    assert path.name == manifest["name"], "Diretorio e nome divergentes"
-    assert re.fullmatch(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?", manifest["version"]), "SemVer invalido"
+    require(path.name == manifest["name"], "Diretorio e nome divergentes")
+    require(re.fullmatch(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?", manifest["version"]), "SemVer invalido")
     interface = manifest["extensions"]["com.openai"]["interface"]
-    assert 0 < len(interface["shortDescription"]) <= 30, "Subtitulo invalido"
-    assert isinstance(interface["capabilities"], list)
-    assert not {"skills", "mcpServers", "apps", "interface"}.intersection(manifest)
+    require(0 < len(interface["shortDescription"]) <= 30, "Subtitulo invalido")
+    require(isinstance(interface["capabilities"], list), "Capacidades invalidas")
+    require(not {"skills", "mcpServers", "apps", "interface"}.intersection(manifest), "Campo portatil em local incorreto")
+    for key in ("logo", "composerIcon", "logoDark", "composerIconDark"):
+        if key in interface:
+            contained(path, interface[key])
     overlay = json.loads((path / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
     for key in ("name", "version", "description", "author"):
-        assert overlay[key] == manifest[key], f"Overlay divergente: {key}"
-    assert overlay["interface"] == interface
+        require(overlay[key] == manifest[key], f"Overlay divergente: {key}")
+    require(overlay["interface"] == interface, "Apresentacao do overlay divergente")
+    for key in ("skills", "mcpServers", "apps"):
+        if key in overlay:
+            contained(path, overlay[key])
     skills = list((path / "skills").glob("*/SKILL.md"))
-    assert skills, "Nenhuma skill utilizavel"
     names = set()
     for skill in skills:
         content = skill.read_text(encoding="utf-8")
-        assert skill.stat().st_size <= 1024 * 1024
-        assert content.startswith("---\n"), "Frontmatter ausente"
+        require(skill.stat().st_size <= 1024 * 1024, "Skill excede 1 MiB")
+        require(content.startswith("---\n"), "Frontmatter ausente")
         _, front, body = content.split("---", 2)
         data = yaml.safe_load(front)
-        assert isinstance(data, dict)
+        require(isinstance(data, dict), "Frontmatter invalido")
         for key in ("name", "description"):
-            assert isinstance(data.get(key), str) and data[key].strip()
+            require(isinstance(data.get(key), str) and data[key].strip(), f"Campo ausente: {key}")
         valid_name(data["name"])
-        assert data["name"] == skill.parent.name and data["name"] not in names
+        require(data["name"] == skill.parent.name and data["name"] not in names, "Nome de skill divergente ou duplicado")
         names.add(data["name"])
-        assert body.strip()
+        require(body.strip(), "Corpo da skill vazio")
         for ref in re.findall(r"\]\(([^)]+)\)", body):
-            if "://" not in ref:
+            if "://" not in ref and not any(char in ref for char in "{}<>"):
                 resolved = (skill.parent / ref).resolve()
-                assert resolved.is_relative_to(path.resolve()) and resolved.is_file(), f"Referencia invalida: {ref}"
-    for file in path.rglob("*"):
-        assert file.name not in {".env", "node_modules", "__pycache__"}, f"Arquivo proibido: {file}"
-        assert file.suffix.lower() not in {".pem", ".key", ".pfx", ".p12"}, f"Chave privada: {file}"
+                require(resolved.is_relative_to(path.resolve()) and resolved.is_file(), f"Referencia invalida: {ref}")
+    has_mcp = (path / "mcp.json").exists()
+    has_apps = "apps" in overlay
     if (path / "mcp.json").exists():
         mcp = json.loads((path / "mcp.json").read_text(encoding="utf-8"))
-        assert mcp["$schema"] == SCHEMA + "mcp.schema.json"
-        assert isinstance(mcp["mcpServers"], dict) and mcp["mcpServers"]
+        require(mcp["$schema"] == SCHEMA + "mcp.schema.json", "Schema MCP incorreto")
+        core = json.loads(json.dumps(mcp))
+        for server in core.get("mcpServers", {}).values():
+            server.pop("extensions", None)
+        mcp_schema = json.loads((ROOT / "schemas/mcp.schema.json").read_text(encoding="utf-8"))
+        jsonschema.Draft202012Validator(mcp_schema).validate(core)
+        require(isinstance(mcp["mcpServers"], dict) and mcp["mcpServers"], "MCP vazio")
         for server in mcp["mcpServers"].values():
-            assert server["type"] in {"stdio", "streamable-http", "sse"}
+            require(server["type"] in {"stdio", "streamable-http", "sse"}, "Transporte MCP invalido")
             if server["type"] == "stdio":
-                assert server.get("command")
+                require(server.get("command"), "Comando MCP ausente")
             else:
-                assert server.get("url", "").startswith("https://")
+                url = urlsplit(server.get("url", ""))
+                require(url.scheme == "https" and url.netloc and not url.username and not url.fragment, "URL MCP insegura")
+    require(bool(skills) or has_mcp or has_apps, "Plugin sem componente utilizavel")
+    for file in files:
+        if file.suffix == ".json":
+            json.loads(file.read_text(encoding="utf-8-sig"))
+        elif file.suffix in {".yaml", ".yml"}:
+            yaml.safe_load(file.read_text(encoding="utf-8-sig"))
+        elif file.suffix == ".py":
+            ast.parse(file.read_text(encoding="utf-8-sig"), filename=str(file))
+        elif file.suffix == ".svg":
+            ET.parse(file)
 
 
 def check_all() -> list[dict]:
@@ -241,14 +292,36 @@ def check_all() -> list[dict]:
             except (AssertionError, ValueError, KeyError, OSError, jsonschema.ValidationError) as error:
                 results.append({"plugin": path.name, "status": "failed", "error": str(error)})
     market = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
-    assert {r["plugin"] for r in results} == {p["name"] for p in market["plugins"]}
+    require({r["plugin"] for r in results} == {p["name"] for p in market["plugins"]}, "Marketplace divergente dos plugins")
     for entry in market["plugins"]:
         target = (ROOT / entry["source"]["path"]).resolve()
-        assert target.is_relative_to(ROOT) and (target / "plugin.json").is_file()
+        require(target.is_relative_to(ROOT) and (target / "plugin.json").is_file(), "Origem invalida no marketplace")
     dump(ROOT / "reports/validacao.json", {"validation": "Estrutural local; nao comprova instalacao ou conexao.", "results": results})
     if not results or any(r["status"] == "failed" for r in results):
         raise ValueError("Validacao falhou; consulte reports/validacao.json")
+    catalogue(results)
     return results
+
+
+def catalogue(results: list[dict]) -> None:
+    (ROOT / "docs").mkdir(parents=True, exist_ok=True)
+    lines = [
+        "# Catálogo compartilhado Ávila Ops", "",
+        "Plugins disponíveis no marketplace privado `avilaops-desenvolvimento`.", "",
+        "| Plugin | Versão | Skills | MCP | Finalidade | Validação |",
+        "| --- | --- | ---: | --- | --- | --- |",
+    ]
+    for result in results:
+        root = ROOT / "plugins" / result["plugin"]
+        manifest = json.loads((root / "plugin.json").read_text(encoding="utf-8"))
+        skills = len(list((root / "skills").glob("*/SKILL.md")))
+        mcp = "sim" if (root / "mcp.json").is_file() else "não"
+        lines.append(
+            f"| [{manifest['name']}](../plugins/{manifest['name']}/README.md) | "
+            f"{manifest['version']} | {skills} | {mcp} | {manifest['description']} | {result['status']} |"
+        )
+    lines += ["", "Validação estrutural não substitui autenticação nem execução funcional no host.", ""]
+    (ROOT / "docs/CATALOGO.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def package() -> None:
@@ -261,13 +334,23 @@ def package() -> None:
             continue
         manifest = json.loads((plugin / "plugin.json").read_text(encoding="utf-8"))
         archive = output / f"{plugin.name}-{manifest['version']}.zip"
-        with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as bundle:
-            for file in sorted(plugin.rglob("*")):
-                if file.is_file():
-                    bundle.write(file, file.relative_to(plugin))
+        files = package_files(plugin)
+        expected = {file.relative_to(plugin).as_posix(): hashlib.sha256(file.read_bytes()).hexdigest() for file in files}
+        with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, strict_timestamps=False) as bundle:
+            for file in files:
+                bundle.write(file, file.relative_to(plugin))
         with zipfile.ZipFile(archive) as bundle:
-            assert bundle.testzip() is None
-            assert "plugin.json" in bundle.namelist()
+            require(bundle.testzip() is None, "ZIP corrompido")
+            require(set(bundle.namelist()) == set(expected), "Conteudo do ZIP divergente")
+            for name, digest in expected.items():
+                require(hashlib.sha256(bundle.read(name)).hexdigest() == digest, "Arquivo do ZIP diverge da fonte")
+            with tempfile.TemporaryDirectory(prefix="avila-marketplace-") as temporary:
+                staging = Path(temporary) / plugin.name
+                staging.mkdir(parents=True)
+                for member in bundle.namelist():
+                    require((staging / member).resolve().is_relative_to(staging.resolve()), "Membro do ZIP escapa do destino")
+                bundle.extractall(staging)
+                validate(staging)
         hashes[archive.name] = hashlib.sha256(archive.read_bytes()).hexdigest()
     dump(output / "sha256.json", hashes)
 

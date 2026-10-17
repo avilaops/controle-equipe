@@ -16,7 +16,7 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 ## Conexão e dependências
 
-Endpoint declarado: `https://mcp.avilaops.com/mcp`, transporte `streamable-http` e autenticação OAuth descoberta pelo servidor. Autorize a conta individual no host; o pacote não contém token.
+Este pacote fornece a skill de CMS. A conexão compartilhada pertence ao plugin `avila-mcp-unificado`, evitando registrar o mesmo servidor e repetir OAuth em cada domínio.
 
 Dependência para o aceite: Host, MCP central autenticado e ferramentas específicas autorizadas. Consulte a [plataforma própria](../../docs/PLATAFORMA.md).
 

@@ -2,8 +2,9 @@
 
 Os pacotes iniciais nao precisam de MCP para orientar desenvolvimento local.
 Adicione `mcp.json` na raiz de um plugin somente depois de verificar o endpoint,
-transporte, autenticacao e ferramentas. Nao conecte todos os plugins ao mesmo
-gateway sem avaliar as permissoes reais de cada identidade.
+transporte, autenticacao e ferramentas. Cada servidor deve ter um unico plugin
+proprietario. Skills de dominio usam a conexao compartilhada sem registrar
+novamente o mesmo nome ou endpoint.
 
 ## Contrato de integracao
 
@@ -19,8 +20,8 @@ Registre junto ao pacote, sem credenciais:
 - Revogacao, falhas esperadas e tratamento de operacoes com resultado incerto.
 
 Use o schema `https://agent-plugins.org/schemas/1.0.0/mcp.schema.json`.
-Configuracoes OpenAI de autenticacao ficam em `extensions.com.openai` de cada servidor.
-Credenciais pertencem ao fluxo protegido do host ou ao cofre da aplicacao.
+O host descobre a autenticacao compativel pelo servidor. Credenciais pertencem
+ao fluxo protegido do host ou ao cofre da aplicacao.
 Nao inclua `.env`, tokens, chaves JSON, cabecalhos secretos ou IDs de apps inventados.
 
 ## Validar acesso

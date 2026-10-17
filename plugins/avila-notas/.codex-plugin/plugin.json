@@ -16,8 +16,7 @@
     "shortDescription": "Documentação e conhecimento"
   },
   "keywords": [],
-  "mcpServers": "./.mcp.json",
   "name": "avila-notas",
   "skills": "./skills",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

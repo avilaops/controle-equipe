@@ -16,8 +16,7 @@
     "shortDescription": "Clientes e atendimentos"
   },
   "keywords": [],
-  "mcpServers": "./.mcp.json",
   "name": "avila-crm",
   "skills": "./skills",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

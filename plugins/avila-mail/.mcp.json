@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "avilaops-central": {
-      "type": "streamable-http",
-      "url": "https://mcp.avilaops.com/mcp"
-    }
-  }
-}

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.3 - 2026-10-17
+
+- Consolidado o gateway central no plugin `avila-mcp-unificado`.
+- Mantido o endpoint de Lojas somente no plugin `avila-lojas`.
+- Removidos registros e fluxos OAuth duplicados dos plugins de domínio.
+- Adicionada validação que rejeita nomes de servidores MCP duplicados no marketplace.
+
 ## 1.0.2 - 2026-10-17
 
 - Corrigidos sete manifestos MCP rejeitados pelo Codex por usarem `extensions` fora do contrato.

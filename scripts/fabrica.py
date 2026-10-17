@@ -302,6 +302,7 @@ def validate_markdown_links(root: Path) -> None:
 
 def check_all() -> list[dict]:
     results = []
+    mcp_owners: dict[str, str] = {}
     for path in sorted((ROOT / "plugins").iterdir()):
         if path.is_dir():
             try:
@@ -309,6 +310,14 @@ def check_all() -> list[dict]:
                 results.append({"plugin": path.name, "status": "passed"})
             except (AssertionError, ValueError, KeyError, OSError, jsonschema.ValidationError) as error:
                 results.append({"plugin": path.name, "status": "failed", "error": str(error)})
+                continue
+            mcp_path = path / "mcp.json"
+            if mcp_path.is_file():
+                mcp = json.loads(mcp_path.read_text(encoding="utf-8"))
+                for server_name in mcp["mcpServers"]:
+                    owner = mcp_owners.get(server_name)
+                    require(owner is None, f"Servidor MCP duplicado: {server_name} ({owner}, {path.name})")
+                    mcp_owners[server_name] = path.name
     market = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     require({r["plugin"] for r in results} == {p["name"] for p in market["plugins"]}, "Marketplace divergente dos plugins")
     for entry in market["plugins"]:
@@ -347,6 +356,13 @@ def package() -> None:
     check_all()
     output = ROOT / "dist"
     output.mkdir(exist_ok=True)
+    expected_archives = {
+        f"{plugin.name}-{json.loads((plugin / 'plugin.json').read_text(encoding='utf-8'))['version']}.zip"
+        for plugin in (ROOT / "plugins").iterdir() if plugin.is_dir()
+    }
+    for stale in output.glob("*.zip"):
+        if stale.name not in expected_archives:
+            stale.unlink()
     hashes = {}
     for plugin in sorted((ROOT / "plugins").iterdir()):
         if not plugin.is_dir():

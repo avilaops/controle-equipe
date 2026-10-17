@@ -38,6 +38,16 @@ class FactoryTests(unittest.TestCase):
             self.assertIn("plugin.json", archive.namelist())
             self.assertFalse(any(name.startswith("plugins/") for name in archive.namelist()))
 
+    def test_packaging_removes_stale_plugin_versions(self):
+        self.create()
+        fabrica.marketplace()
+        stale = self.root / "dist/avila-teste-0.0.1.zip"
+        stale.parent.mkdir()
+        stale.write_bytes(b"stale")
+        fabrica.package()
+        self.assertFalse(stale.exists())
+        self.assertTrue((self.root / "dist/avila-teste-0.1.0.zip").is_file())
+
     def test_existing_package_preserved(self):
         plugin = self.create()
         before = (plugin / "plugin.json").read_bytes()
@@ -108,6 +118,23 @@ class FactoryTests(unittest.TestCase):
                 fabrica.hashlib.sha256(bundle.read(member)).hexdigest(),
                 fabrica.hashlib.sha256((plugin / member).read_bytes()).hexdigest(),
             )
+
+    def test_marketplace_rejects_duplicate_mcp_server_names(self):
+        first = self.create("avila-primeiro")
+        second = self.create("avila-segundo")
+        for plugin in (first, second):
+            fabrica.dump(plugin / "mcp.json", {
+                "$schema": fabrica.SCHEMA + "mcp.schema.json",
+                "mcpServers": {
+                    "avilaops-central": {
+                        "type": "streamable-http",
+                        "url": "https://example.com/mcp",
+                    }
+                },
+            })
+        fabrica.marketplace()
+        with self.assertRaisesRegex(ValueError, "Servidor MCP duplicado"):
+            fabrica.check_all()
 
     def test_markdown_links_must_resolve(self):
         docs = self.root / "docs"

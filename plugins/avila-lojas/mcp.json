@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "avilaops-central": {
+    "avilaops-lojas": {
       "type": "streamable-http",
       "url": "https://lojas.avilaops.com/api/mcp"
     }

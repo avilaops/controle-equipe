@@ -16,8 +16,7 @@
     "shortDescription": "E-mail profissional"
   },
   "keywords": [],
-  "mcpServers": "./.mcp.json",
   "name": "avila-mail",
   "skills": "./skills",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

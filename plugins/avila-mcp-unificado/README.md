@@ -1,7 +1,9 @@
-# Integracao MCP local
+# Gateway MCP central da Ávila Ops
 
-Plugin `avila-mcp-unificado` com uma skill de desenvolvimento local.
+Plugin `avila-mcp-unificado`, proprietário único da conexão com `https://mcp.avilaops.com/mcp`.
 
-Para criar workflows de negocio, adicione skills focadas em `skills/<nome>/SKILL.md`, com entradas, passos, saida e verificacao especificos. Siga `docs/AUTORIA.md` na fabrica.
+O host descobre a autenticação OAuth pelo servidor. O pacote não contém token, segredo ou cabeçalho de autenticação. Plugins de domínio como CMS, CRM, Mail, Notas e TMS fornecem skills e usam esta conexão compartilhada quando suas ferramentas existem no gateway.
 
-Nao instalado nem conectado automaticamente. Este pacote nao concede acesso ao sistema.
+Essa separação impede conexões repetidas, colisões de nome e múltiplos fluxos OAuth para o mesmo serviço.
+
+Validação estrutural não comprova autenticação ou acesso a dados. Consulte [CONEXOES.md](../../docs/CONEXOES.md).

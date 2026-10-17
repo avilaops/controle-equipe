@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.2 - 2026-10-17
+
+- Corrigidos sete manifestos MCP rejeitados pelo Codex por usarem `extensions` fora do contrato.
+- Alterados os plugins de Lojas para o endpoint dedicado com OAuth e escolha explícita de tenant.
+- Adicionado teste de regressão para compatibilidade real dos manifestos MCP.
+- Executados os aceites de Apple, Design, Engenharia, CMS e Notas; CRM, Mail e TMS ficaram bloqueados por ausência de ferramentas próprias.
+
 ## 1.0.1 - 2026-10-17
 
 - Removido o pacote sem identidade funcional `dev-6ad0a0086b188191928c20e0cf70d6fe`.

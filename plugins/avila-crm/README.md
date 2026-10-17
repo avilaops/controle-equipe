@@ -16,7 +16,7 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 ## Conexão e dependências
 
-Endpoint declarado: `https://mcp.avilaops.com/mcp`, transporte `streamable-http`, autenticação `api_key` com esquema `bearer`. Configure a credencial individual no host; o pacote não contém token.
+Endpoint declarado: `https://mcp.avilaops.com/mcp`, transporte `streamable-http` e autenticação OAuth descoberta pelo servidor. Autorize a conta individual no host; o pacote não contém token.
 
 Dependência para o aceite: Host, MCP central autenticado e ferramentas específicas autorizadas. Consulte a [plataforma própria](../../docs/PLATAFORMA.md).
 
@@ -26,7 +26,7 @@ Dependência para o aceite: Host, MCP central autenticado e ferramentas específ
 
 ## Validação e limites
 
-Instalação local no host `hp`: realizada em 2026-10-17. Execução do prompt de exemplo: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt acima e registre a saída e o escopo autorizado. Consulte os [casos de aceite](../../docs/CASOS-DE-ACEITE.md).
+Instalação local no host `hp`: realizada em 2026-10-17. Caso de aceite: `BLOQUEADO`, pois o gateway central autenticado não expõe ferramentas próprias deste módulo. Consulte a evidência sanitizada em [ACEITE-2026-10-17.md](../../docs/ACEITE-2026-10-17.md).
 
 A configuração aponta para o MCP central, mas a inspeção do grafo central não identificou nós específicos deste módulo. É necessário descobrir e testar suas ferramentas antes de declarar integração operacional.
 

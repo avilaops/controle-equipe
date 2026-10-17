@@ -26,7 +26,7 @@ Dependência para o aceite: Host, skills carregadas e insumos de teste. Consulte
 
 ## Validação e limites
 
-Instalação local no host `hp`: realizada em 2026-10-17. Execução do prompt de exemplo: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt acima e registre a saída e o escopo autorizado. Consulte os [casos de aceite](../../docs/CASOS-DE-ACEITE.md).
+Instalação local no host `hp`: realizada em 2026-10-17. A skill foi descoberta e aplicada a uma entrada sintética em modo somente leitura. Caso de aceite: `APROVADO`. Consulte a evidência sanitizada em [ACEITE-2026-10-17.md](../../docs/ACEITE-2026-10-17.md).
 
 A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de distribuição fica no [README do marketplace](../../README.md). Os ZIPs não concedem acesso aos serviços conectados.
 

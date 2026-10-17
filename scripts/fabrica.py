@@ -257,11 +257,13 @@ def validate(path: Path) -> None:
     if (path / "mcp.json").exists():
         mcp = json.loads((path / "mcp.json").read_text(encoding="utf-8"))
         require(mcp["$schema"] == SCHEMA + "mcp.schema.json", "Schema MCP incorreto")
-        core = json.loads(json.dumps(mcp))
-        for server in core.get("mcpServers", {}).values():
-            server.pop("extensions", None)
         mcp_schema = json.loads((ROOT / "schemas/mcp.schema.json").read_text(encoding="utf-8"))
-        jsonschema.Draft202012Validator(mcp_schema).validate(core)
+        jsonschema.Draft202012Validator(mcp_schema).validate(mcp)
+        compatibility_path = path / ".mcp.json"
+        if compatibility_path.exists():
+            compatibility = json.loads(compatibility_path.read_text(encoding="utf-8"))
+            compatibility_with_schema = {"$schema": SCHEMA + "mcp.schema.json", **compatibility}
+            jsonschema.Draft202012Validator(mcp_schema).validate(compatibility_with_schema)
         require(isinstance(mcp["mcpServers"], dict) and mcp["mcpServers"], "MCP vazio")
         for server in mcp["mcpServers"].values():
             require(server["type"] in {"stdio", "streamable-http", "sse"}, "Transporte MCP invalido")

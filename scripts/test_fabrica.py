@@ -19,6 +19,7 @@ class FactoryTests(unittest.TestCase):
         self.source.mkdir()
         (self.root / "schemas").mkdir()
         shutil.copy(fabrica.ROOT / "schemas/plugin.schema.json", self.root / "schemas")
+        shutil.copy(fabrica.ROOT / "schemas/mcp.schema.json", self.root / "schemas")
         self.override = patch.object(fabrica, "ROOT", self.root)
         self.override.start()
         self.addCleanup(self.override.stop)
@@ -78,6 +79,22 @@ class FactoryTests(unittest.TestCase):
         plugin = self.create()
         (plugin / ".env").write_text("SECRET=test", encoding="utf-8")
         with self.assertRaises(ValueError):
+            fabrica.validate(plugin)
+
+    def test_mcp_rejects_client_extensions_unsupported_by_codex(self):
+        plugin = self.create()
+        config = {
+            "$schema": fabrica.SCHEMA + "mcp.schema.json",
+            "mcpServers": {
+                "teste": {
+                    "type": "streamable-http",
+                    "url": "https://example.com/mcp",
+                    "extensions": {"com.openai": {"auth": {"type": "api_key"}}},
+                }
+            },
+        }
+        fabrica.dump(plugin / "mcp.json", config)
+        with self.assertRaises(fabrica.jsonschema.ValidationError):
             fabrica.validate(plugin)
 
     def test_archive_matches_validated_source(self):

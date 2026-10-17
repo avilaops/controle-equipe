@@ -15,7 +15,7 @@
     "composerIcon": "./assets/plugin-icon.svg"
   },
   "name": "lojas-clientes",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ajuda clientes da Lojas Ávila Ops a preencher sua loja e organizar seu catálogo.",
   "author": {
     "name": "Nicolas",

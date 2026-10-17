@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 - 2026-10-17
 
 - Consolidado o marketplace privado de desenvolvimento e operações.
 - Adicionados 12 plugins operacionais e uma biblioteca com 20 skills.

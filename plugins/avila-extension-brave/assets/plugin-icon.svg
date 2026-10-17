@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">avila-extension-brave</title>
+  <rect width="256" height="256" rx="52" fill="#10243A"/>
+  <path d="M48 174 94 70h68l46 104h-38l-9-23H95l-9 23H48Zm59-55h42l-21-52-21 52Z" fill="#F8FAFC"/>
+  <circle cx="194" cy="62" r="22" fill="#38BDF8"/>
+  <text x="128" y="218" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#38BDF8">EB</text>
+</svg>

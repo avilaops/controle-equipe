@@ -1,0 +1,20 @@
+{
+  "name": "avila-skills",
+  "version": "1.0.0",
+  "description": "Biblioteca compartilhada de workflows especializados da Ávila Ops.",
+  "author": {
+    "name": "Ávila Ops"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ávila Skills",
+    "shortDescription": "Biblioteca de workflows",
+    "longDescription": "Biblioteca compartilhada de skills especializadas para desenvolvimento, integração, design, conteúdo e operações.",
+    "developerName": "Ávila Ops",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "defaultPrompt": "Liste as skills Ávila disponíveis e escolha somente a adequada para a tarefa solicitada.",
+    "logo": "./assets/plugin-icon.svg",
+    "composerIcon": "./assets/plugin-icon.svg"
+  }
+}

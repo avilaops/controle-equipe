@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-15T21:42:43+00:00",
+  "generatedAt": "2026-10-17T07:51:50+00:00",
   "applications": [
     {
       "application": "avila-arxisbim-com-br",
-      "path": "D:\\Projetos\\arxisbim.com.br\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/arxisbim.com.br/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -12,7 +12,7 @@
     },
     {
       "application": "avila-auth-avilaops-com",
-      "path": "D:\\Projetos\\auth.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/auth.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -21,7 +21,7 @@
     },
     {
       "application": "avila-avilaops-site",
-      "path": "D:\\Projetos\\avilaops-site\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-avilaops-site",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -30,7 +30,7 @@
     },
     {
       "application": "avila-cms",
-      "path": "D:\\Projetos\\CMS\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/cms.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -39,7 +39,7 @@
     },
     {
       "application": "avila-crm-avilaops-com",
-      "path": "D:\\Projetos\\crm.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/crm.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -48,7 +48,7 @@
     },
     {
       "application": "avila-engops-avilaops-com",
-      "path": "D:\\Projetos\\engops.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/engops.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -57,7 +57,7 @@
     },
     {
       "application": "avila-erp",
-      "path": "D:\\Projetos\\ERP\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/ERP/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -66,7 +66,7 @@
     },
     {
       "application": "avila-extension-brave",
-      "path": "D:\\Projetos\\extension-brave\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-extension-brave",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -75,7 +75,7 @@
     },
     {
       "application": "avila-ferramentas",
-      "path": "D:\\Projetos\\ferramentas\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-ferramentas",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -84,7 +84,7 @@
     },
     {
       "application": "avila-gerador-3d",
-      "path": "D:\\Projetos\\Gerador-3d\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/gerador-3d/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -93,7 +93,7 @@
     },
     {
       "application": "avila-infra",
-      "path": "D:\\Projetos\\infra\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/infra/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -102,7 +102,7 @@
     },
     {
       "application": "avila-investigacao",
-      "path": "D:\\Projetos\\investigacao\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/investigacao/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -111,7 +111,7 @@
     },
     {
       "application": "avila-lojas-avilaops-com",
-      "path": "D:\\Projetos\\lojas.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/lojas.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -120,7 +120,7 @@
     },
     {
       "application": "avila-ludusequipamentos-website",
-      "path": "D:\\Projetos\\Ludusequipamentos-website\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/ludusequipamentos-website/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -129,7 +129,7 @@
     },
     {
       "application": "avila-mail-avilaops-com",
-      "path": "D:\\Projetos\\mail.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/mail.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -138,7 +138,7 @@
     },
     {
       "application": "avila-mcp-unificado",
-      "path": "D:\\Projetos\\mcp-unificado\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-mcp-unificado",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -147,7 +147,7 @@
     },
     {
       "application": "avila-mcp-avilaops-com",
-      "path": "D:\\Projetos\\mcp.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/mcp.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -156,7 +156,7 @@
     },
     {
       "application": "avila-mellotransportesriopreto-com-br",
-      "path": "D:\\Projetos\\mellotransportesriopreto.com.br\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/mellotransportesriopreto.com.br/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -165,7 +165,7 @@
     },
     {
       "application": "avila-motor-web",
-      "path": "D:\\Projetos\\motor-web\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/motor-web/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -174,7 +174,7 @@
     },
     {
       "application": "avila-n8n-avilaops-com",
-      "path": "D:\\Projetos\\n8n.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/n8n.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -183,7 +183,7 @@
     },
     {
       "application": "avila-notas-integracao",
-      "path": "D:\\Projetos\\notas-integracao\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-notas-integracao",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -192,7 +192,7 @@
     },
     {
       "application": "avila-notas-avilaops-com",
-      "path": "D:\\Projetos\\notas.avilaops.com\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/notas.avilaops.com/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -201,7 +201,7 @@
     },
     {
       "application": "avila-painel-wifi",
-      "path": "D:\\Projetos\\painel-wifi\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-painel-wifi",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -210,7 +210,7 @@
     },
     {
       "application": "avila-pentest",
-      "path": "D:\\Projetos\\pentest\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/pentest/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -219,7 +219,7 @@
     },
     {
       "application": "avila-saudepet-app-br",
-      "path": "D:\\Projetos\\saudepet.app.br\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/saudepet.app.br/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -228,7 +228,7 @@
     },
     {
       "application": "avila-scrapper",
-      "path": "D:\\Projetos\\Scrapper\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/catalogos-fornecedores/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -237,7 +237,7 @@
     },
     {
       "application": "avila-sinapsemed",
-      "path": "D:\\Projetos\\sinapsemed\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilainc/sinapsemed/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -246,7 +246,7 @@
     },
     {
       "application": "avila-tagflow",
-      "path": "D:\\Projetos\\tagflow\\.agents\\equipe\\controle.json",
+      "source": "projetos-locais/avila-tagflow",
       "members": 0,
       "tasks": 0,
       "blocked": 0,
@@ -255,7 +255,7 @@
     },
     {
       "application": "avila-tms",
-      "path": "D:\\Projetos\\TMS\\.agents\\equipe\\controle.json",
+      "source": "https://github.com/avilaops/TMS/tree/feat/controle-equipe-20261016",
       "members": 0,
       "tasks": 0,
       "blocked": 0,

@@ -12,7 +12,9 @@
         "displayName": "Painel local de rede",
         "shortDescription": "Desenvolvimento da aplicacao",
         "developerName": "Avila Ops",
-        "capabilities": []
+        "capabilities": [],
+        "logo": "./assets/plugin-icon.svg",
+        "composerIcon": "./assets/plugin-icon.svg"
       }
     }
   }

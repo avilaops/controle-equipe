@@ -5,6 +5,18 @@
   },
   "plugins": [
     {
+      "name": "apple-avila",
+      "source": {
+        "source": "local",
+        "path": "./plugins/apple-avila"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
       "name": "avila-arxisbim-com-br",
       "source": {
         "source": "local",
@@ -53,6 +65,30 @@
       "category": "Productivity"
     },
     {
+      "name": "avila-cms-operacoes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-cms-operacoes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "avila-crm",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-crm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "avila-crm-avilaops-com",
       "source": {
         "source": "local",
@@ -63,6 +99,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity"
+    },
+    {
+      "name": "avila-design",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Design"
     },
     {
       "name": "avila-engops-avilaops-com",
@@ -149,6 +197,18 @@
       "category": "Productivity"
     },
     {
+      "name": "avila-lojas",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-lojas"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "avila-lojas-avilaops-com",
       "source": {
         "source": "local",
@@ -165,6 +225,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/avila-ludusequipamentos-website"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "avila-mail",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-mail"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -245,6 +317,18 @@
       "category": "Productivity"
     },
     {
+      "name": "avila-notas",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-notas"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "avila-notas-avilaops-com",
       "source": {
         "source": "local",
@@ -261,6 +345,18 @@
       "source": {
         "source": "local",
         "path": "./plugins/avila-notas-integracao"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "avila-ops-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-ops-skills"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -329,6 +425,18 @@
       "category": "Productivity"
     },
     {
+      "name": "avila-skills",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-skills"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
       "name": "avila-tagflow",
       "source": {
         "source": "local",
@@ -345,6 +453,54 @@
       "source": {
         "source": "local",
         "path": "./plugins/avila-tms"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "avila-tms-operacoes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/avila-tms-operacoes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "dev-6ad0a0086b188191928c20e0cf70d6fe",
+      "source": {
+        "source": "local",
+        "path": "./plugins/dev-6ad0a0086b188191928c20e0cf70d6fe"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Other"
+    },
+    {
+      "name": "lojas-clientes",
+      "source": {
+        "source": "local",
+        "path": "./plugins/lojas-clientes"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "n8n-avilaops",
+      "source": {
+        "source": "local",
+        "path": "./plugins/n8n-avilaops"
       },
       "policy": {
         "installation": "AVAILABLE",

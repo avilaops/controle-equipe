@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 - 2026-10-17
+
+- Removido o pacote sem identidade funcional `dev-6ad0a0086b188191928c20e0cf70d6fe`.
+- Confirmada a instalação local dos 11 plugins operacionais e de produto.
+- Validados OAuth e leitura real nos conectores Ávila Ops, Lojas e n8n.
+- Registrado o aceite sanitizado dos conectores no host `hp`.
+
 ## 1.0.0 - 2026-10-17
 
 - Consolidado o marketplace oficial de desenvolvimento e operações.

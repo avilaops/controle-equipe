@@ -26,7 +26,7 @@ Dependência para o aceite: Host, MCP central autenticado e ferramentas específ
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. Consulte os [casos de aceite](../../docs/CASOS-DE-ACEITE.md).
+Instalação local no host `hp`: realizada em 2026-10-17. Execução do prompt de exemplo: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt acima e registre a saída e o escopo autorizado. Consulte os [casos de aceite](../../docs/CASOS-DE-ACEITE.md).
 
 A configuração aponta para o MCP central, mas a inspeção do grafo central não identificou nós específicos deste módulo. É necessário descobrir e testar suas ferramentas antes de declarar integração operacional.
 

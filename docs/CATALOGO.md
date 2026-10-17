@@ -43,7 +43,6 @@ Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.
 | [avila-tagflow](../plugins/avila-tagflow/README.md) | 0.2.0 | 2 | não | Desenvolvimento local Tagflow | passed |
 | [avila-tms](../plugins/avila-tms/README.md) | 0.2.0 | 2 | não | Sistema de gestao de transportes | passed |
 | [avila-tms-operacoes](../plugins/avila-tms-operacoes/README.md) | 1.0.0 | 1 | sim | Operação de transportes, entregas e comprovantes. | passed |
-| [dev-6ad0a0086b188191928c20e0cf70d6fe](../plugins/dev-6ad0a0086b188191928c20e0cf70d6fe/README.md) | 1.0.1 | 0 | não | Referência ao app existente 6ad0a008; função de negócio ainda não identificada. | passed |
 | [lojas-clientes](../plugins/lojas-clientes/README.md) | 0.1.1 | 1 | sim | Ajuda clientes da Lojas Ávila Ops a preencher sua loja e organizar seu catálogo. | passed |
 | [n8n-avilaops](../plugins/n8n-avilaops/README.md) | 0.1.1 | 0 | sim | Conecta ao servidor MCP autenticado do n8n da Avila Ops. Recursos dependem das permissões concedidas e dos workflows habilitados. | passed |
 

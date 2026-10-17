@@ -3,7 +3,7 @@
 Fonte compartilhada de plugins, skills e controle de equipe da Ávila Ops.
 
 - 29 plugins de desenvolvimento ligados às aplicações.
-- 12 plugins operacionais e de produto.
+- 11 plugins operacionais e de produto.
 - 1 plugin `avila-skills` com 20 workflows especializados.
 - Fonte oficial e única dos plugins Ávila Ops.
 

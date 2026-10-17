@@ -26,7 +26,7 @@ Dependência para o aceite: Host e autorização do MCP n8n. Consulte a [platafo
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. Consulte os [casos de aceite](../../docs/CASOS-DE-ACEITE.md).
+Instalação local no host `hp`: realizada em 2026-10-17. Descoberta e leitura mínima do conector: `APROVADO`. Evidência sanitizada em [ACEITE-2026-10-17.md](../../docs/ACEITE-2026-10-17.md).
 
 Uma consulta à ferramenta n8n `search_workflows` respondeu na sessão de auditoria; isso não equivale à instalação ou ao teste deste pacote no host.
 

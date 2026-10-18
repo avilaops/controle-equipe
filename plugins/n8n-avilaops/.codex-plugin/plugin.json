@@ -18,5 +18,5 @@
   "keywords": [],
   "mcpServers": "./.mcp.json",
   "name": "n8n-avilaops",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }

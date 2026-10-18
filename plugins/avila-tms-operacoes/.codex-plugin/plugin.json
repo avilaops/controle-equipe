@@ -12,12 +12,11 @@
     "developerName": "Nicolas",
     "displayName": "Ávila TMS",
     "logo": "./assets/plugin-icon.svg",
-    "longDescription": "Operação de transportes, entregas e comprovantes. Ligação ao MCP central, sujeita à autenticação e às ferramentas realmente expostas.",
+    "longDescription": "Operação de transportes, entregas e comprovantes. A skill orienta o fluxo e registra a dependência até existirem ferramentas específicas validadas.",
     "shortDescription": "Gestão de transportes"
   },
   "keywords": [],
-  "mcpServers": "./.mcp.json",
   "name": "avila-tms-operacoes",
   "skills": "./skills",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

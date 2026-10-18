@@ -16,9 +16,9 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 ## Conexão e dependências
 
-Endpoint declarado: `https://mcp.avilaops.com/mcp`, transporte `streamable-http`, autenticação `api_key` com esquema `bearer`. Configure a credencial individual no host; o pacote não contém token.
+O pacote não declara `mcp.json`: a identidade testada não estava vinculada a uma loja específica, portanto nenhuma leitura tenant-scoped foi aprovada.
 
-Dependência para o aceite: Host, MCP central autenticado e ferramentas específicas autorizadas. A orientação completa está em PLATAFORMA.md no acervo central.
+Dependência para o aceite: host, MCP central autenticado e ferramentas específicas autorizadas. O contrato está em [docs/CONEXOES.md](../../docs/CONEXOES.md).
 
 ## Exemplo de leitura ou análise
 
@@ -26,7 +26,9 @@ Dependência para o aceite: Host, MCP central autenticado e ferramentas específ
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. A matriz completa fica em CASOS-DE-ACEITE.md no acervo central.
+Auditoria no Codex CLI: realizada. Caso de aceite: `BLOQUEADO_TENANT` em 18/10/2026. As ferramentas Lojas foram descobertas, mas a chave administrativa da sessão não está vinculada a uma loja específica. O backend recusou corretamente as leituras e nenhuma escrita foi tentada.
+
+Para concluir o aceite, use uma credencial individual limitada à loja do cliente no fluxo protegido do host. Nunca reutilize a chave administrativa genérica neste pacote.
 
 A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de exportação fica no README.md do acervo central. Os ZIPs são privados/locais e não representam submissão pública.
 

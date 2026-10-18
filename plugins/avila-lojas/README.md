@@ -16,9 +16,9 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 ## Conexão e dependências
 
-Endpoint declarado: `https://mcp.avilaops.com/mcp`, transporte `streamable-http`, autenticação `api_key` com esquema `bearer`. Configure a credencial individual no host; o pacote não contém token.
+O pacote não declara `mcp.json`: o endpoint central expõe ferramentas Lojas, mas a identidade testada não estava vinculada a um tenant e nenhuma leitura foi aprovada.
 
-Dependência para o aceite: Host, MCP central autenticado e ferramentas específicas autorizadas. A orientação completa está em PLATAFORMA.md no acervo central.
+Dependência para o aceite: host, MCP central autenticado e ferramentas específicas autorizadas. O contrato está em [docs/CONEXOES.md](../../docs/CONEXOES.md).
 
 ## Exemplo de leitura ou análise
 
@@ -26,7 +26,9 @@ Dependência para o aceite: Host, MCP central autenticado e ferramentas específ
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. A matriz completa fica em CASOS-DE-ACEITE.md no acervo central.
+Instalação local no Codex CLI: realizada. Execução do pacote por modelo/host: `TESTADO`. Caso de aceite de leitura: `BLOQUEADO_TENANT` em 18/10/2026. O host descobriu as ferramentas `lojas_*`, mas a leitura foi recusada porque a chave administrativa da sessão não está vinculada a uma loja específica. Nenhuma operação de escrita foi tentada.
+
+Para concluir o aceite, configure no fluxo protegido do host uma credencial limitada à loja correta e repita uma consulta de produto. Não registre a chave nem dados de clientes no pacote.
 
 A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de exportação fica no README.md do acervo central. Os ZIPs são privados/locais e não representam submissão pública.
 
@@ -41,5 +43,5 @@ Na raiz do acervo central, execute a validação estrutural antes de exportar:
 py -3 scripts/acervo.py validate
 ```
 
-Esse comando pertence ao acervo central, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
+Esse comando pertence ao acervo central, não ao ZIP isolado. Para repetir o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui a execução no host. O bloqueio comprovado fica em [docs/CONEXOES.md](../../docs/CONEXOES.md).
 

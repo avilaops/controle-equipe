@@ -15,11 +15,11 @@
         "developerName": "Nicolas",
         "displayName": "Ávila Mail",
         "logo": "./assets/plugin-icon.svg",
-        "longDescription": "Assistente de e-mail corporativo da Ávila Ops. Ligação ao MCP central, sujeita à autenticação e às ferramentas realmente expostas.",
+        "longDescription": "Assistente de e-mail corporativo da Ávila Ops. A skill orienta o fluxo e registra a dependência até existirem ferramentas específicas validadas.",
         "shortDescription": "E-mail profissional"
       }
     }
   },
   "name": "avila-mail",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }

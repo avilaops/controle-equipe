@@ -12,12 +12,11 @@
     "developerName": "Nicolas",
     "displayName": "Ávila CRM",
     "logo": "./assets/plugin-icon.svg",
-    "longDescription": "Operações de CRM e relacionamento com clientes. Ligação ao MCP central, sujeita à autenticação e às ferramentas realmente expostas.",
+    "longDescription": "Operações de CRM e relacionamento com clientes. A skill orienta o fluxo e registra a dependência até existirem ferramentas específicas validadas.",
     "shortDescription": "Clientes e atendimentos"
   },
   "keywords": [],
-  "mcpServers": "./.mcp.json",
   "name": "avila-crm",
   "skills": "./skills",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }

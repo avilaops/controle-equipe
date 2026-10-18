@@ -18,7 +18,7 @@ Nenhuma skill empacotada.
 
 Endpoint declarado: `https://n8n.avilaops.com/mcp-server/http`, transporte `streamable-http`. O manifesto não fixa um tipo de autenticação; a conexão exige a autorização aceita pelo n8n.
 
-Dependência para o aceite: Host e autorização do MCP n8n. A orientação completa está em PLATAFORMA.md no acervo central.
+Dependência para o aceite: host e autorização do MCP n8n. O contrato está em [docs/CONEXOES.md](../../docs/CONEXOES.md).
 
 ## Exemplo de leitura ou análise
 
@@ -26,9 +26,9 @@ Dependência para o aceite: Host e autorização do MCP n8n. A orientação comp
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. A matriz completa fica em CASOS-DE-ACEITE.md no acervo central.
+Conexão no host Codex: `TESTADO`. Caso de aceite de leitura: `APROVADO` em 18/10/2026. A sessão autenticada identificou o projeto pessoal acessível e consultou os workflows por esse projeto, sem executar ou alterar automações.
 
-Uma consulta à ferramenta n8n `search_workflows` respondeu na sessão de auditoria; isso não equivale à instalação ou ao teste deste pacote no host.
+O teste comprova a conexão e as permissões da identidade usada no host. O método de autenticação permanece administrado pelo fluxo protegido do n8n e não é exposto à conversa nem fixado no manifesto. Operações de escrita e execução continuam fora do aceite até serem necessárias e autorizadas.
 
 A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de exportação fica no README.md do acervo central. Os ZIPs são privados/locais e não representam submissão pública.
 
@@ -43,5 +43,5 @@ Na raiz do acervo central, execute a validação estrutural antes de exportar:
 py -3 scripts/acervo.py validate
 ```
 
-Esse comando pertence ao acervo central, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
+Esse comando pertence ao acervo central, não ao ZIP isolado. Para repetir o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui a execução no host. O contrato e a evidência sanitizada ficam em [docs/CONEXOES.md](../../docs/CONEXOES.md).
 

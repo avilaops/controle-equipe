@@ -9,7 +9,8 @@ Fonte compartilhada de plugins, skills e controle de equipe da Ávila Ops.
 
 Consulte o [catálogo](docs/CATALOGO.md), a [galeria](docs/GALERIA.html), a [distribuição](docs/DISTRIBUICAO.md),
 a [autoria](docs/AUTORIA.md), as [integrações](docs/CONEXOES.md), os
-[casos de aceite](docs/CASOS-DE-ACEITE.md), a [plataforma própria](docs/PLATAFORMA.md) e o
+[casos de aceite](docs/CASOS-DE-ACEITE.md), as [validações no host](docs/VALIDACOES-HOST.md),
+a [plataforma própria](docs/PLATAFORMA.md) e o
 [controle da equipe](PAINEL-EQUIPE.md).
 
 ## Estrutura

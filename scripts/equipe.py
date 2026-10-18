@@ -42,7 +42,8 @@ def validate(data):
         if not member.get("name", "").strip() or not member.get("role", "").strip():
             raise ValueError("Membro exige nome e papel")
     for task in data["tasks"]:
-        if task["status"] not in STATES or task["owner"] not in members:
+        owner = task["owner"]
+        if task["status"] not in STATES or (owner is not None and owner not in members):
             raise ValueError("Estado ou responsavel invalido")
         if not task.get("title", "").strip() or not task.get("acceptance", "").strip():
             raise ValueError("Tarefa exige titulo e criterio de aceite")

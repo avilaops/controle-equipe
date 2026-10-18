@@ -257,11 +257,13 @@ def validate(path: Path) -> None:
     if (path / "mcp.json").exists():
         mcp = json.loads((path / "mcp.json").read_text(encoding="utf-8"))
         require(mcp["$schema"] == SCHEMA + "mcp.schema.json", "Schema MCP incorreto")
-        core = json.loads(json.dumps(mcp))
-        for server in core.get("mcpServers", {}).values():
-            server.pop("extensions", None)
         mcp_schema = json.loads((ROOT / "schemas/mcp.schema.json").read_text(encoding="utf-8"))
-        jsonschema.Draft202012Validator(mcp_schema).validate(core)
+        jsonschema.Draft202012Validator(mcp_schema).validate(mcp)
+        compatibility_path = path / ".mcp.json"
+        if compatibility_path.exists():
+            compatibility = json.loads(compatibility_path.read_text(encoding="utf-8"))
+            compatibility_with_schema = {"$schema": SCHEMA + "mcp.schema.json", **compatibility}
+            jsonschema.Draft202012Validator(mcp_schema).validate(compatibility_with_schema)
         require(isinstance(mcp["mcpServers"], dict) and mcp["mcpServers"], "MCP vazio")
         for server in mcp["mcpServers"].values():
             require(server["type"] in {"stdio", "streamable-http", "sse"}, "Transporte MCP invalido")
@@ -282,8 +284,25 @@ def validate(path: Path) -> None:
             ET.parse(file)
 
 
+def validate_markdown_links(root: Path) -> None:
+    """Require every local Markdown link in the repository to resolve."""
+    for document in sorted(root.rglob("*.md")):
+        if any(part in EXCLUDED or part == "dist" for part in document.relative_to(root).parts):
+            continue
+        content = document.read_text(encoding="utf-8-sig")
+        for reference in re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", content):
+            target = unquote(reference.split("#", 1)[0].strip())
+            if (not target or "://" in target or target.startswith(("mailto:", "#"))
+                    or any(char in target for char in "{}<>")):
+                continue
+            resolved = (document.parent / target).resolve()
+            require(resolved.is_relative_to(root.resolve()) and resolved.exists(),
+                    f"Referencia Markdown invalida em {document.relative_to(root)}: {reference}")
+
+
 def check_all() -> list[dict]:
     results = []
+    mcp_owners: dict[str, str] = {}
     for path in sorted((ROOT / "plugins").iterdir()):
         if path.is_dir():
             try:
@@ -291,11 +310,20 @@ def check_all() -> list[dict]:
                 results.append({"plugin": path.name, "status": "passed"})
             except (AssertionError, ValueError, KeyError, OSError, jsonschema.ValidationError) as error:
                 results.append({"plugin": path.name, "status": "failed", "error": str(error)})
+                continue
+            mcp_path = path / "mcp.json"
+            if mcp_path.is_file():
+                mcp = json.loads(mcp_path.read_text(encoding="utf-8"))
+                for server_name in mcp["mcpServers"]:
+                    owner = mcp_owners.get(server_name)
+                    require(owner is None, f"Servidor MCP duplicado: {server_name} ({owner}, {path.name})")
+                    mcp_owners[server_name] = path.name
     market = json.loads((ROOT / ".agents/plugins/marketplace.json").read_text(encoding="utf-8"))
     require({r["plugin"] for r in results} == {p["name"] for p in market["plugins"]}, "Marketplace divergente dos plugins")
     for entry in market["plugins"]:
         target = (ROOT / entry["source"]["path"]).resolve()
         require(target.is_relative_to(ROOT) and (target / "plugin.json").is_file(), "Origem invalida no marketplace")
+    validate_markdown_links(ROOT)
     dump(ROOT / "reports/validacao.json", {"validation": "Estrutural local; nao comprova instalacao ou conexao.", "results": results})
     if not results or any(r["status"] == "failed" for r in results):
         raise ValueError("Validacao falhou; consulte reports/validacao.json")
@@ -307,7 +335,7 @@ def catalogue(results: list[dict]) -> None:
     (ROOT / "docs").mkdir(parents=True, exist_ok=True)
     lines = [
         "# Catálogo compartilhado Ávila Ops", "",
-        "Plugins disponíveis no marketplace privado `avilaops-desenvolvimento`.", "",
+        "Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.", "",
         "| Plugin | Versão | Skills | MCP | Finalidade | Validação |",
         "| --- | --- | ---: | --- | --- | --- |",
     ]
@@ -328,6 +356,13 @@ def package() -> None:
     check_all()
     output = ROOT / "dist"
     output.mkdir(exist_ok=True)
+    expected_archives = {
+        f"{plugin.name}-{json.loads((plugin / 'plugin.json').read_text(encoding='utf-8'))['version']}.zip"
+        for plugin in (ROOT / "plugins").iterdir() if plugin.is_dir()
+    }
+    for stale in output.glob("*.zip"):
+        if stale.name not in expected_archives:
+            stale.unlink()
     hashes = {}
     for plugin in sorted((ROOT / "plugins").iterdir()):
         if not plugin.is_dir():

@@ -1,6 +1,7 @@
 # Autoria de plugins Avila Ops
 
-- Esta pasta e a fonte dos novos pacotes; o acervo legado no diretorio pai permanece separado.
+- Este repositorio e a fonte oficial e unica dos plugins e skills Avila Ops.
+- O antigo repositorio `avilaops/plugins` foi descontinuado. Nao recrie fontes paralelas.
 - Nao edite caches de plugins instalados. Nao mova os repositorios das aplicacoes.
 - Use `scripts/fabrica.py create` para iniciar um pacote. Preserve nomes e incremente a versao ao alterar uma entrega.
 - Cada skill deve resolver uma tarefa concreta, definir quando se aplica e verificar o resultado.

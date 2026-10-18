@@ -18,7 +18,7 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 Este pacote não declara servidor MCP. As integrações dependem das ferramentas e autorizações realmente disponíveis no host.
 
-Dependência para o aceite: Host, skills carregadas e insumos de teste. A orientação completa está em PLATAFORMA.md no acervo central.
+Dependência para o aceite: Host, skills carregadas e insumos de teste. Consulte a [plataforma própria](../../docs/PLATAFORMA.md).
 
 ## Exemplo de leitura ou análise
 
@@ -26,20 +26,20 @@ Dependência para o aceite: Host, skills carregadas e insumos de teste. A orient
 
 ## Validação e limites
 
-Instalação local no host: não realizada. Execução deste pacote por modelo/host: `NAO_TESTADO`. Caso de aceite: `NAO_EXECUTADO`. Execute o prompt de exemplo acima e registre a saída, a data, o host e o escopo autorizado. A matriz completa fica em CASOS-DE-ACEITE.md no acervo central.
+Instalação local no host `hp`: realizada em 2026-10-17. A skill foi descoberta e aplicada a uma entrada sintética em modo somente leitura. Caso de aceite: `APROVADO`. Consulte a evidência sanitizada em [ACEITE-2026-10-17.md](../../docs/ACEITE-2026-10-17.md).
 
-A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de exportação fica no README.md do acervo central. Os ZIPs são privados/locais e não representam submissão pública.
+A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de distribuição fica no [README do marketplace](../../README.md). Os ZIPs não concedem acesso aos serviços conectados.
 
 
 ## Plataforma própria e verificação local
 
 A Ávila Ops usa plataforma própria. Não adote Odoo ou Medusa como dependência padrão. Descubra os contratos e ferramentas reais; não presuma stack, endpoints, dados ou permissões. O servidor deve impor autorização e isolamento por empresa.
 
-Na raiz do acervo central, execute a validação estrutural antes de exportar:
+Na raiz do marketplace, execute a validação estrutural antes de exportar:
 
 ```powershell
-py -3 scripts/acervo.py validate
+py -3 scripts/fabrica.py validate
 ```
 
-Esse comando pertence ao acervo central, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
+Esse comando pertence ao marketplace, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
 

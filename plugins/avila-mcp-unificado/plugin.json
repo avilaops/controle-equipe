@@ -1,16 +1,16 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "avila-mcp-unificado",
-  "version": "0.2.0",
-  "description": "Integracao MCP local",
+  "version": "0.3.0",
+  "description": "Gateway MCP central da Ávila Ops",
   "author": {
     "name": "Avila Ops"
   },
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Integracao MCP local",
-        "shortDescription": "Desenvolvimento da aplicacao",
+        "displayName": "Ávila Ops MCP",
+        "shortDescription": "Gateway corporativo",
         "developerName": "Avila Ops",
         "capabilities": [],
         "logo": "./assets/plugin-icon.svg",

@@ -158,10 +158,6 @@
       "status": "passed"
     },
     {
-      "plugin": "dev-6ad0a0086b188191928c20e0cf70d6fe",
-      "status": "passed"
-    },
-    {
       "plugin": "lojas-clientes",
       "status": "passed"
     },

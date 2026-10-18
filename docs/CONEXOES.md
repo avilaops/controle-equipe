@@ -2,8 +2,9 @@
 
 Os pacotes iniciais nao precisam de MCP para orientar desenvolvimento local.
 Adicione `mcp.json` na raiz de um plugin somente depois de verificar o endpoint,
-transporte, autenticacao e ferramentas. Nao conecte todos os plugins ao mesmo
-gateway sem avaliar as permissoes reais de cada identidade.
+transporte, autenticacao e ferramentas. Cada servidor deve ter um unico plugin
+proprietario. Skills de dominio usam a conexao compartilhada sem registrar
+novamente o mesmo nome ou endpoint.
 
 ## Contrato de integracao
 
@@ -19,8 +20,8 @@ Registre junto ao pacote, sem credenciais:
 - Revogacao, falhas esperadas e tratamento de operacoes com resultado incerto.
 
 Use o schema `https://agent-plugins.org/schemas/1.0.0/mcp.schema.json`.
-Configuracoes OpenAI de autenticacao ficam em `extensions.com.openai` de cada servidor.
-Credenciais pertencem ao fluxo protegido do host ou ao cofre da aplicacao.
+O host descobre a autenticacao compativel pelo servidor. Credenciais pertencem
+ao fluxo protegido do host ou ao cofre da aplicacao.
 Nao inclua `.env`, tokens, chaves JSON, cabecalhos secretos ou IDs de apps inventados.
 
 ## Validar acesso
@@ -40,8 +41,8 @@ de lifecycle nem servicos ficticios.
 - Ambiente e host: producao, Codex CLI `0.162.1`, em 18/10/2026.
 - Finalidade: consultar sites, paginas, posts e midia do CMS da plataforma propria.
 - Endpoint e transporte: `https://mcp.avilaops.com/mcp`, `streamable-http`.
-- Autenticacao: credencial individual `api_key` com esquema `bearer`, configurada
-  pelo fluxo protegido do host; nenhum segredo fica no pacote.
+- Autenticacao: OAuth descoberto pelo gateway central e concluido no fluxo
+  protegido do host; nenhum segredo fica no pacote.
 - Identidade e tenant: sessao autenticada; o tenant foi escolhido somente entre
   os sites devolvidos por `cms_listar_sites`, que tambem informou o papel efetivo.
 - Permissao minima validada: leitura. Escrita nao foi necessaria nem executada.
@@ -53,8 +54,8 @@ de lifecycle nem servicos ficticios.
 - Limite: o resultado comprova somente a identidade, o tenant e o host usados no
   teste. Outro host, conta ou tenant exige nova validacao. Escritas exigem uma
   necessidade concreta, autorizacao e releitura do registro quando suportada.
-- Revogacao e falhas: remova a credencial no host para revogar o acesso. Em erro
-  de autenticacao ou resultado incerto, nao repita gravacoes nao idempotentes.
+- Revogacao e falhas: revogue o consentimento OAuth ou remova a conexao no host.
+  Em erro de autenticacao ou resultado incerto, nao repita gravacoes nao idempotentes.
 
 ### n8n-avilaops
 
@@ -85,8 +86,8 @@ de lifecycle nem servicos ficticios.
 - Ambiente e host: producao, Codex CLI `0.162.1`, em 18/10/2026.
 - Finalidade: consultar documentos e colecoes do Notas da plataforma propria.
 - Endpoint e transporte: `https://mcp.avilaops.com/mcp`, `streamable-http`.
-- Autenticacao: credencial individual `api_key` com esquema `bearer`, configurada
-  pelo fluxo protegido do host; nenhum segredo fica no pacote.
+- Autenticacao: OAuth descoberto pelo gateway central e concluido no fluxo
+  protegido do host; nenhum segredo fica no pacote.
 - Identidade e tenant: `notas_fetch` com `current_user` confirmou a identidade
   autenticada e seu papel administrativo. Dados pessoais nao sao registrados.
 - Permissao minima validada: leitura. Escrita nao foi necessaria nem executada.
@@ -96,29 +97,30 @@ de lifecycle nem servicos ficticios.
   seu conteudo.
 - Limite: outro host ou outra identidade exige nova validacao. Criacao, edicao,
   movimentacao, arquivamento e exclusao permanecem fora deste aceite.
-- Revogacao e falhas: remova a credencial no host para revogar o acesso. Em erro
-  de autenticacao ou resultado incerto, nao repita gravacoes nao idempotentes.
-
-## Conexoes pendentes
+- Revogacao e falhas: revogue o consentimento OAuth ou remova a conexao no host.
+  Em erro de autenticacao ou resultado incerto, nao repita gravacoes nao idempotentes.
 
 ### avila-lojas
 
-- Ambiente e host testados: producao, Codex CLI `0.162.1`, em 18/10/2026.
-- Endpoint e transporte: `https://mcp.avilaops.com/mcp`, `streamable-http`.
-- Descoberta: 26 ferramentas `lojas_*`, sendo 14 de leitura e 12 de escrita.
-- Resultado: `lojas_obter_loja` e `lojas_listar_produtos` foram recusadas porque
-  a chave administrativa da sessao nao esta vinculada a uma loja especifica.
-- Acao necessaria: configurar no fluxo protegido uma credencial limitada ao
-  tenant correto e repetir uma leitura de produto. Nenhuma escrita foi tentada.
+- Ambiente e host: producao, Codex, em 17/10/2026.
+- Finalidade: consultar a loja e o catalogo autorizados pelo lojista.
+- Endpoint e transporte: `https://lojas.avilaops.com/api/mcp`,
+  `streamable-http`, registrado como `avilaops-lojas` pelo plugin proprietario
+  `avila-lojas`.
+- Autenticacao, identidade e tenant: OAuth descoberto pelo servidor, com escolha
+  explicita da loja e dos escopos no navegador; nenhum token fica no pacote.
+- Permissao minima validada: leitura. Escrita nao foi necessaria nem executada.
+- Leitura comprovada: a conexao confirmou plano, estado da loja e acesso ao
+  catalogo do tenant escolhido sem registrar dados do cliente no pacote.
+- Compartilhamento: `lojas-clientes` usa esta conexao sem registrar outro
+  servidor MCP; sua leitura minima tambem foi aprovada no mesmo aceite.
+- Limite: outro host, identidade ou loja exige nova validacao. Alteracoes de
+  produto, pedido, estoque ou configuracao exigem autorizacao especifica e
+  verificacao posterior.
+- Revogacao e falhas: revogue o consentimento OAuth ou remova a conexao no host.
+  Em resultado incerto, releia o recurso antes de repetir qualquer gravacao.
 
-### lojas-clientes
-
-- Compartilha o endpoint e as ferramentas do modulo Lojas, mas exige credencial
-  individual limitada a loja do cliente.
-- Resultado: a chave administrativa disponivel nao identifica uma loja e foi
-  recusada pelo backend. Ela nao deve ser reutilizada neste pacote.
-- Acao necessaria: conectar uma identidade tenant-scoped no fluxo protegido e
-  repetir a consulta de catalogo sem salvar alteracoes.
+## Conexoes pendentes
 
 ### avila-crm
 

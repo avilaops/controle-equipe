@@ -5,7 +5,7 @@ Data: 16/10/2026.
 22 repositorios receberam commits na branch `feat/controle-equipe-20261016`.
 As branches nao foram integradas a main. Os checkouts e stagings originais foram preservados.
 
-Sete projetos sem remoto acessivel estao preservados em `projetos-locais/` neste repositorio privado.
+Sete projetos sem remoto acessivel estao preservados em `projetos-locais/` neste repositorio.
 Esses diretorios contem apenas a estrutura de equipe; nao sao copias das aplicacoes.
 
 | Aplicacao | Destino | Commit |

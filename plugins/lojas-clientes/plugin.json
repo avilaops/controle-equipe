@@ -17,7 +17,7 @@
         ],
         "developerName": "Nicolas",
         "displayName": "Lojas Minha loja",
-        "longDescription": "Organize dados da loja, categorias, produtos, fotos e descrições a partir de arquivos e informações fornecidos. A conexão permanece pendente até existir uma credencial individual limitada à loja correta.",
+        "longDescription": "Organize dados da loja, categorias, produtos, fotos e descrições a partir de arquivos e informações fornecidos. Conecta ao MCP existente da Ávila Ops com credencial individual. As permissões e o isolamento da loja devem ser impostos pelo servidor.",
         "shortDescription": "Preencha sua loja pelo chat",
         "logo": "./assets/plugin-icon.svg",
         "composerIcon": "./assets/plugin-icon.svg"
@@ -25,5 +25,5 @@
     }
   },
   "name": "lojas-clientes",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

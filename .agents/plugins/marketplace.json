@@ -473,18 +473,6 @@
       "category": "Productivity"
     },
     {
-      "name": "dev-6ad0a0086b188191928c20e0cf70d6fe",
-      "source": {
-        "source": "local",
-        "path": "./plugins/dev-6ad0a0086b188191928c20e0cf70d6fe"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Other"
-    },
-    {
       "name": "lojas-clientes",
       "source": {
         "source": "local",

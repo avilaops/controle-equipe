@@ -12,11 +12,12 @@
     "developerName": "Nicolas",
     "displayName": "Avila Lojas",
     "logo": "./assets/plugin-icon.svg",
-    "longDescription": "Apoio às lojas, produtos, pedidos e estoque. A skill orienta o fluxo até existir uma conexão validada com identidade limitada ao tenant correto.",
+    "longDescription": "Apoio às lojas, produtos, pedidos e estoque. Ligação ao MCP central, sujeita à autenticação e às ferramentas realmente expostas.",
     "shortDescription": "Catálogo e vendas"
   },
   "keywords": [],
+  "mcpServers": "./.mcp.json",
   "name": "avila-lojas",
   "skills": "./skills",
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

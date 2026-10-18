@@ -1,14 +1,15 @@
-# Marketplace privado Ávila Ops
+# Marketplace Ávila Ops
 
 Fonte compartilhada de plugins, skills e controle de equipe da Ávila Ops.
 
 - 29 plugins de desenvolvimento ligados às aplicações.
-- 12 plugins operacionais e de produto.
+- 11 plugins operacionais e de produto.
 - 1 plugin `avila-skills` com 20 workflows especializados.
-- Marketplace privado para instalação por membros autorizados.
+- Fonte oficial e única dos plugins Ávila Ops.
 
 Consulte o [catálogo](docs/CATALOGO.md), a [galeria](docs/GALERIA.html), a [distribuição](docs/DISTRIBUICAO.md),
-a [autoria](docs/AUTORIA.md), as [integrações](docs/CONEXOES.md) e o
+a [autoria](docs/AUTORIA.md), as [integrações](docs/CONEXOES.md), os
+[casos de aceite](docs/CASOS-DE-ACEITE.md), a [plataforma própria](docs/PLATAFORMA.md) e o
 [controle da equipe](PAINEL-EQUIPE.md).
 
 ## Estrutura
@@ -44,7 +45,13 @@ codex plugin marketplace list
 ```
 
 Depois, instale os plugins necessários pelo navegador de plugins e inicie uma conversa nova.
-O repositório é privado; o usuário precisa ter acesso à organização.
+O catálogo é público; cada MCP, API ou aplicativo conectado mantém autenticação e autorização próprias.
+
+## Fonte oficial
+
+Este repositório substitui o antigo `avilaops/plugins`. Novos plugins, skills, documentação,
+validação, empacotamento e releases devem ser mantidos somente aqui. Cópias instaladas e caches
+locais são artefatos derivados e não devem receber alterações manuais.
 
 ## Identidades semelhantes
 

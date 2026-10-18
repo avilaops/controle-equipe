@@ -16,9 +16,9 @@ O manifesto portátil fica em [plugin.json](plugin.json); o manifesto de compati
 
 ## Conexão e dependências
 
-O pacote não declara `mcp.json`: a identidade testada não estava vinculada a uma loja específica, portanto nenhuma leitura tenant-scoped foi aprovada.
+Este pacote fornece a experiência guiada do cliente. A conexão dedicada pertence ao plugin `avila-lojas`, que aponta para `https://lojas.avilaops.com/api/mcp` e conduz OAuth, escolha da loja e escopos sem armazenar token no pacote.
 
-Dependência para o aceite: host, MCP central autenticado e ferramentas específicas autorizadas. O contrato está em [docs/CONEXOES.md](../../docs/CONEXOES.md).
+Dependência para o aceite: Host, MCP central autenticado e ferramentas específicas autorizadas. Consulte a [plataforma própria](../../docs/PLATAFORMA.md).
 
 ## Exemplo de leitura ou análise
 
@@ -26,22 +26,20 @@ Dependência para o aceite: host, MCP central autenticado e ferramentas específ
 
 ## Validação e limites
 
-Auditoria no Codex CLI: realizada. Caso de aceite: `BLOQUEADO_TENANT` em 18/10/2026. As ferramentas Lojas foram descobertas, mas a chave administrativa da sessão não está vinculada a uma loja específica. O backend recusou corretamente as leituras e nenhuma escrita foi tentada.
+Instalação local no host `hp`: realizada em 2026-10-17. Descoberta e leitura mínima do conector: `APROVADO`. Evidência sanitizada em [ACEITE-2026-10-17.md](../../docs/ACEITE-2026-10-17.md).
 
-Para concluir o aceite, use uma credencial individual limitada à loja do cliente no fluxo protegido do host. Nunca reutilize a chave administrativa genérica neste pacote.
-
-A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de exportação fica no README.md do acervo central. Os ZIPs são privados/locais e não representam submissão pública.
+A presença de arquivos, ícone ou configuração não comprova disponibilidade de ferramentas nem autorização. Use dados de teste e respeite o escopo do usuário. A documentação de distribuição fica no [README do marketplace](../../README.md). Os ZIPs não concedem acesso aos serviços conectados.
 
 
 ## Plataforma própria e verificação local
 
 A Ávila Ops usa plataforma própria. Não adote Odoo ou Medusa como dependência padrão. Descubra os contratos e ferramentas reais; não presuma stack, endpoints, dados ou permissões. O servidor deve impor autorização e isolamento por empresa.
 
-Na raiz do acervo central, execute a validação estrutural antes de exportar:
+Na raiz do marketplace, execute a validação estrutural antes de exportar:
 
 ```powershell
-py -3 scripts/acervo.py validate
+py -3 scripts/fabrica.py validate
 ```
 
-Esse comando pertence ao acervo central, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
+Esse comando pertence ao marketplace, não ao ZIP isolado. Para o aceite deste pacote, a resposta ao prompt deve usar somente as fontes fornecidas ou ferramentas disponíveis, explicitar bloqueios e não realizar gravações. Validação estrutural não substitui essa execução no host.
 

@@ -44,6 +44,6 @@ Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.
 | [avila-tms](../plugins/avila-tms/README.md) | 0.2.0 | 2 | não | Sistema de gestao de transportes | passed |
 | [avila-tms-operacoes](../plugins/avila-tms-operacoes/README.md) | 1.0.2 | 1 | não | Operação de transportes, entregas e comprovantes. | passed |
 | [lojas-clientes](../plugins/lojas-clientes/README.md) | 0.1.3 | 1 | não | Ajuda clientes da Lojas Ávila Ops a preencher sua loja e organizar seu catálogo. | passed |
-| [n8n-avilaops](../plugins/n8n-avilaops/README.md) | 0.1.1 | 0 | sim | Conecta ao servidor MCP autenticado do n8n da Avila Ops. Recursos dependem das permissões concedidas e dos workflows habilitados. | passed |
+| [n8n-avilaops](../plugins/n8n-avilaops/README.md) | 0.1.2 | 0 | sim | Conecta ao servidor MCP autenticado do n8n da Avila Ops. Recursos dependem das permissões concedidas e dos workflows habilitados. | passed |
 
 Validação estrutural não substitui autenticação nem execução funcional no host.

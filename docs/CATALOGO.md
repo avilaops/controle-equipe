@@ -26,7 +26,7 @@ Plugins disponíveis no marketplace oficial `avilaops-desenvolvimento`.
 | [avila-mail](../plugins/avila-mail/README.md) | 0.1.3 | 1 | não | Assistente de e-mail corporativo da Ávila Ops. | passed |
 | [avila-mail-avilaops-com](../plugins/avila-mail-avilaops-com/README.md) | 0.2.0 | 2 | não | Servico de email | passed |
 | [avila-mcp-avilaops-com](../plugins/avila-mcp-avilaops-com/README.md) | 0.2.0 | 2 | não | Gateway MCP Avila Ops | passed |
-| [avila-mcp-unificado](../plugins/avila-mcp-unificado/README.md) | 0.3.0 | 2 | sim | Gateway MCP central da Ávila Ops | passed |
+| [avila-mcp-unificado](../plugins/avila-mcp-unificado/README.md) | 0.3.1 | 2 | sim | Gateway MCP central da Ávila Ops | passed |
 | [avila-mellotransportesriopreto-com-br](../plugins/avila-mellotransportesriopreto-com-br/README.md) | 0.2.0 | 2 | não | Site Mello Transportes | passed |
 | [avila-motor-web](../plugins/avila-motor-web/README.md) | 0.2.0 | 2 | não | Regras de conteudo compartilhadas | passed |
 | [avila-n8n-avilaops-com](../plugins/avila-n8n-avilaops-com/README.md) | 0.2.0 | 2 | não | Modulos e automacoes n8n | passed |
